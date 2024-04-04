@@ -1,8 +1,14 @@
-import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion';
-import { businessFields } from '../constants/business-fields'
-import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion';
+// import { businessFields } from '../constants/business-fields'
+import { useRef } from 'react';
 
-const ImageContent = ({ imageUrl, imageAlt, i }) => (
+type ImageContentProps = {
+  imageUrl: string,
+  imageAlt: string
+  i: number
+};
+
+const ImageContent = ({ imageUrl, imageAlt, i }: ImageContentProps) => (
   <div className='relative lg:w-1/2 px-2 md:px-10 lg:p-0'>
     <img
       className={`object-cover rounded-lg ${i % 2 === 0 ? 'picture-deformation-r lg:rounded-r-lg' : 'picture-deformation-l lg:rounded-l-lg'} `}
@@ -10,18 +16,23 @@ const ImageContent = ({ imageUrl, imageAlt, i }) => (
       alt={imageAlt}
     />
   </div>
-)
+);
 
-const ContentElement = ({ field, i }) => {
-  const wrapperRef = useRef(null)
+type ContentElementProps = {
+  field: any,
+  i: number
+};
+
+const ContentElement = ({ field, i }: ContentElementProps) => {
+  const wrapperRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
     offset: ['start end', 'center center']
-  })
-  const fromRight = useTransform(scrollYProgress, [0, 1], ['-20%', '0%'])
-  const fromLeft = useTransform(scrollYProgress, [0, 1], ['20%', '0%'])
+  });
+  const fromRight = useTransform(scrollYProgress, [0, 1], ['-20%', '0%']);
+  const fromLeft = useTransform(scrollYProgress, [0, 1], ['20%', '0%']);
 
-  const isOdd = i % 2 !== 0
+  const isOdd = i % 2 !== 0;
 
   return (
     <motion.div
@@ -84,8 +95,14 @@ const ContentElement = ({ field, i }) => {
       </div>
       {i % 2 === 0 && <ImageContent imageUrl={field.image} imageAlt={field.alt} i={i} />}
     </motion.div >
-  )
-}
+  );
+};
+
+const businessFields = [
+  {
+
+  }
+];
 
 const ScrollContent = () => {
   return (
@@ -96,7 +113,7 @@ const ScrollContent = () => {
         <ContentElement key={i} field={field} i={i} />
       ))}
     </motion.section>
-  )
-}
+  );
+};
 
 export default ScrollContent;

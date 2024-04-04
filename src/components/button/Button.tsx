@@ -1,10 +1,17 @@
-import React from 'react'
+type ButtonProps = {
+  text: string
+};
 
-const Button = ({ text, onClick }) => {
+const Button = ({ text }: ButtonProps) => {
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+
+  };
+
   return (
     <button
       className="group relative w-fit transition-transform duration-300 active:scale-95"
-      onClick={onClick}
+      onClick={handleClick}
     >
       <div
         className="relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110"
@@ -15,7 +22,7 @@ const Button = ({ text, onClick }) => {
       </div>
       <span className="pointer-events-none absolute -inset-4 z-0 transform-gpu rounded-2xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 opacity-30 blur-xl transition-all duration-300 group-hover:opacity-90 group-active:opacity-50"></span>
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

@@ -36,7 +36,7 @@ const CustomerReview = ({ rating, username, profile, publishedTime, feedback }: 
   const calculateTimeSincePublished = (publishedTime: string) => {
     const currentTime = new Date();
     const reviewTime = new Date(publishedTime);
-    const difference = Math.floor((currentTime - reviewTime) / (1000 * 60 * 60 * 24)); // Difference in days
+    const difference = Math.floor(((currentTime as any) - (reviewTime as any)) / (1000 * 60 * 60 * 24)); // Difference in days
     if (difference === 0) {
       return 'Today';
     } else if (difference === 1) {

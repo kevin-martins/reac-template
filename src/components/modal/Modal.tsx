@@ -1,7 +1,12 @@
-import React from "react";
+import { Dispatch, SetStateAction } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-export const Modal = ({ isOpen, setIsOpen }) => {
+type ModalProps = {
+  isOpen: boolean,
+  setIsOpen: Dispatch<SetStateAction<boolean>>,
+};
+
+export const Modal = ({ isOpen, setIsOpen }: ModalProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -50,5 +55,20 @@ export const Modal = ({ isOpen, setIsOpen }) => {
     </AnimatePresence>
   );
 };
+
+// const ExampleWrapper = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   return (
+//     <div className="px-4 py-64 bg-slate-900 grid place-content-center">
+//       <button
+//         onClick={() => setIsOpen(true)}
+//         className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium px-4 py-2 rounded hover:opacity-90 transition-opacity"
+//       >
+//         Open Modal
+//       </button>
+//       <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+//     </div>
+//   );
+// };
 
 export default Modal;

@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const questionVariants = {
   open: {
-    // rotate: 180,
     color: "rgba(3, 6, 23, 0)"
   },
   close: {
-    // rotate: 0,
     color: "rgb(255, 255, 255)"
   }
-}
+};
 
 const arrowVariants = {
   open: {
@@ -21,13 +19,18 @@ const arrowVariants = {
     rotate: 0,
     color: "rgb(255, 255, 255)"
   }
-}
+};
 
-const QuestionAnswer = ({ question, answer }) => {
-  const [isClicked, setIsClicked] = useState(false)
+type QuestionAnswerProps = {
+  question: string,
+  answer: string
+};
+
+const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
+  const [isClicked, setIsClicked] = useState(false);
   const onClick = () => {
     setIsClicked(prev => !prev)
-  }
+  };
   return (
     <div className="border-b-[1px] border-b-slate-300">
       <button
@@ -62,27 +65,28 @@ const QuestionAnswer = ({ question, answer }) => {
         </motion.div>}
       </AnimatePresence>
     </div>
-  )
-}
+  );
+};
 
 const data = [
   {
-    question: "Comment prendre contact avec Fermeture Sans Souci ?",
-    answer: "Fermeture Sans Souci est joignable par téléphone au 01.60.88.94.94 ou par l'e-mail à l'adresse suivante: fermetures.sans.souci@gmail.com"
+    question: "Quelle est la meilleure façon de cuisiner des légumes verts ?",
+    answer: "Pour des légumes verts savoureux, essayez de les cuire à la vapeur pendant quelques minutes et assaisonnez-les avec un filet d'huile d'olive et un peu de sel."
   },
   {
-    question: "Quels sont les horaires d’ouverture de Sans Souci ?",
-    answer: "Fermeture Sans Souci est ouvert du Lundi au Vendredi de 09:00 à 12:00 puis de 13:30 à 18:00 "
+    question: "Comment puis-je améliorer ma productivité au travail ?",
+    answer: "Pour améliorer votre productivité, essayez de planifier votre journée à l'avance, de limiter les distractions et de prendre des pauses régulières pour vous ressourcer."
   },
   {
-    question: "Quels sont les avis des internautes à propos de Sans Souci ?",
-    answer: "D'après les avis Google Maps, les internautes sont très satisfait par l'intervention de Fermeture Sans Souci"
+    question: "Quels sont les bienfaits de la méditation ?",
+    answer: "La méditation peut aider à réduire le stress, à améliorer la concentration et à favoriser le bien-être mental et émotionnel."
   },
   {
-    question: "Quelle est l'adresse de Sans Souci ?",
-    answer: "Sans Souci est situé au 75 Fontainebleau, 91100 Corbeil Essonnes"
+    question: "Quel est le meilleur moyen de rester en forme et en bonne santé ?",
+    answer: "Pour rester en forme et en bonne santé, il est recommandé de maintenir une alimentation équilibrée, de faire de l'exercice régulièrement et de dormir suffisamment."
   }
-]
+];
+
 
 const FAQs = () => {
   return (
@@ -93,12 +97,12 @@ const FAQs = () => {
             Questions fréquentes
           </h3>
           {data.map((d, i) => (
-            <QuestionAnswer key={i} {...d} i={i} />
+            <QuestionAnswer key={i} {...d} />
           ))}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FAQs
+export default FAQs;

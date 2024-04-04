@@ -1,7 +1,6 @@
-'use client'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
-const SliderButton = (props) => {
+const SliderButton = (props: any) => {
   const [hover, setHover] = useState<boolean>(false)
 
   const handleEnter = () => {

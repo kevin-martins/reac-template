@@ -1,30 +1,46 @@
-import React from 'react';
-import { galeryImages } from '../constants/galery-pictures';
+// import { galeryImages } from '../constants/galery-pictures';
 import { motion } from 'framer-motion';
+
+const wrapperVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+}
+
+const imageVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 }
+}
+
+const galeryImages = [
+  {
+    url: '',
+    alt: ''
+  }
+]
 
 const PictureGallery = () => {
   return (
-    <>
-      <motion.section
-        variants={wrapperVariants}
-        initial='hidden'
-        animate='show'
-        className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-20 pb-10 gap-6'
-      >
-        {galeryImages.map((image, i) => (
-          <motion.img
-            key={i}
-            variants={imageVariants}
-            src={'/assets/' + image.url + '.png'}
-            alt={image.url}
-            className='hover:rounded-lg ease-in-out transition-all duration-500 scale-95 hover:scale-105'
-          />
-        ))}
-      </motion.section>
-      
-    </>
-  )
-}
+    <motion.section
+      variants={wrapperVariants}
+      initial='hidden'
+      animate='show'
+      className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-20 pb-10 gap-6'
+    >
+      {galeryImages.map((image, i) => (
+        <motion.img
+          key={i}
+          variants={imageVariants}
+          src={'/assets/' + image.url + '.png'}
+          alt={image.alt}
+          className='hover:rounded-lg ease-in-out transition-all duration-500 scale-95 hover:scale-105'
+        />
+      ))}
+    </motion.section>
+  );
+};
 
 {/* <div className='relative z-0 flex items-center overflow-hidden rounded-lg scale-95
 transition-all duration-500 scale-95 hover:scale-100
@@ -58,16 +74,3 @@ hover:scale-100 hover:before:scale-y-[2.5]'
         </div> */}
 
 export default PictureGallery;
-
-const wrapperVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-}
-
-const imageVariants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 }
-}

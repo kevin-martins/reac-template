@@ -1,10 +1,17 @@
-import React, { useRef } from 'react'
-import { partners } from "../constants/partners"
-import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react';
+// import { partners } from "../constants/partners"
+import { motion, useInView } from 'framer-motion';
+
+const partners = [
+  {
+    url: '',
+    alt: ''
+  }
+];
 
 const Partners = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: false })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
   return (
     <div className='grid grid-cols-3 gap-10 w-max mx-auto pt-8'>
@@ -23,7 +30,7 @@ const Partners = () => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Partners
+export default Partners;

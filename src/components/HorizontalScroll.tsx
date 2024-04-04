@@ -22,7 +22,7 @@ const HorizontalScroll = () => {
   );
 };
 
-const Card = ({ card }) => {
+const Card = ({ card }: any) => {
   return (
     <></>
     // <motion.div

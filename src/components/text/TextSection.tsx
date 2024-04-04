@@ -1,19 +1,36 @@
-import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+
+enum Direction {
+  UP,
+  Down,
+  Right,
+  Left
+}
 
 type Props = {
   title: string,
-  text: string
-}
+  text: string,
+  direction: Direction
+};
 
-export const TextSection = ({ title, text }: Props) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: false })
+export const TextSection = ({ title, text, direction = Direction.UP }: Props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+  const movingDirection = (direction: Direction) => {
+    switch (direction) {
+      case Direction.UP: return "translateY(100px)";
+      case Direction.Down: return "translateY(-100px)";
+      case Direction.Right: return "translateX(-100px)";
+      case Direction.Left: return "translateX(100px)";
+    };
+  };
+
   return (
     <motion.section
       ref={ref}
       style={{
-        transform: isInView ? "none" : "translateY(100px)",
+        transform: isInView ? "none" : movingDirection(direction),
         opacity: isInView ? 1 : 0,
         transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1)"
       }}
@@ -27,7 +44,7 @@ export const TextSection = ({ title, text }: Props) => {
         {text}
       </p>
     </motion.section>
-  )
-}
+  );
+};
 
-export default TextSection
+export default TextSection;

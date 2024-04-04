@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
 const imgs = [
@@ -27,32 +27,32 @@ export const SwipeCarousel = () => {
 
   const dragX = useMotionValue(0);
 
-  // useEffect(() => {
-  //   const intervalRef = setInterval(() => {
-  //     const x = dragX.get();
+  useEffect(() => {
+    const intervalRef = setInterval(() => {
+      const x = dragX.get();
 
-  //     if (x === 0) {
-  //       setImgIndex((pv) => {
-  //         if (pv === imgs.length - 1) {
-  //           return 0;
-  //         }
-  //         return pv + 1;
-  //       });
-  //     }
-  //   }, AUTO_DELAY);
+      if (x === 0) {
+        setImgIndex((pv) => {
+          if (pv === imgs.length - 1) {
+            return 0;
+          }
+          return pv + 1;
+        });
+      }
+    }, AUTO_DELAY);
 
-  //   return () => clearInterval(intervalRef);
-  // }, []);
+    return () => clearInterval(intervalRef);
+  }, []);
 
-  // const onDragEnd = () => {
-  //   const x = dragX.get();
+  const onDragEnd = () => {
+    const x = dragX.get();
 
-  //   if (x <= -DRAG_BUFFER && imgIndex < imgs.length - 1) {
-  //     setImgIndex((pv) => pv + 1);
-  //   } else if (x >= DRAG_BUFFER && imgIndex > 0) {
-  //     setImgIndex((pv) => pv - 1);
-  //   }
-  // };
+    if (x <= -DRAG_BUFFER && imgIndex < imgs.length - 1) {
+      setImgIndex((pv) => pv + 1);
+    } else if (x >= DRAG_BUFFER && imgIndex > 0) {
+      setImgIndex((pv) => pv - 1);
+    }
+  };
 
   return (
     <div className="relative overflow-hidden bg-neutral-950 py-8">
@@ -81,7 +81,11 @@ export const SwipeCarousel = () => {
   );
 };
 
-const Images = ({ imgIndex }) => {
+type ImagesProps = {
+  imgIndex: number
+}
+
+const Images = ({ imgIndex }: ImagesProps) => {
   return (
     <>
       {imgs.map((imgSrc, i) => {
@@ -105,7 +109,12 @@ const Images = ({ imgIndex }) => {
   );
 };
 
-const Dots = ({ imgIndex, setImgIndex }) => {
+type DotsProps = {
+  imgIndex: number,
+  setImgIndex: any
+}
+
+const Dots = ({ imgIndex, setImgIndex }:DotsProps) => {
   return (
     <div className="mt-4 flex w-full justify-center gap-2">
       {imgs.map((_, i) => {

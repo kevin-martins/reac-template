@@ -1,11 +1,11 @@
 import React from 'react'
 
-const TablePage = () => {
+const LinkPage = () => {
   return (
     <div>
-      Tables
+      Links
     </div>
   );
 };
 
-export default TablePage;
+export default LinkPage;

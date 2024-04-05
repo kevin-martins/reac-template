@@ -20,7 +20,7 @@ import LoadingPage from './pages/LoadingPage';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/react-template",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [

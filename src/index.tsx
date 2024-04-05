@@ -13,6 +13,10 @@ import CardPage from './pages/CardPage';
 import SliderPage from './pages/SliderPage';
 import ModalPage from './pages/ModalPage';
 import DropdownPage from './pages/DropdownPage';
+import ReviewPage from './pages/ReviewPage';
+import TextPage from './pages/TextPage';
+import LinkPage from './pages/LinkPage';
+import LoadingPage from './pages/LoadingPage';
 
 const router = createBrowserRouter([
   {
@@ -23,12 +27,16 @@ const router = createBrowserRouter([
       { path: "subscription", element: <SubscriptionPage /> },
       { path: "faq", element: <FAQPage /> },
       { path: "contact", element: <ContactPage /> },
+      { path: "review", element: <ReviewPage /> },
       { path: "modal", element: <ModalPage /> },
+      { path: "text", element: <TextPage /> },
       { path: "table", element: <TablePage /> },
       { path: "slider", element: <SliderPage /> },
       { path: "button", element: <ButtonPage /> },
       { path: "card", element: <CardPage /> },
       { path: "dropdown", element: <DropdownPage /> },
+      { path: "link", element: <LinkPage /> },
+      { path: "loading", element: <LoadingPage /> },
     ],
   },
 ]);

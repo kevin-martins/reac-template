@@ -13,13 +13,15 @@ const routes = [
     title: 'Support',
     links: [
       { to: '/faq', text: 'FAQ' },
-      { to: '/contact', text: 'Contacts' }
+      { to: '/contact', text: 'Contacts' },
+      { to: '/review', text: 'Reviews' }
     ]
   },
   {
     title: 'Components',
     links: [
       { to: '/loading', text: 'Loadings' },
+      { to: '/text', text: 'Texts' },
       { to: '/modal', text: 'Modals' }
     ]
   },

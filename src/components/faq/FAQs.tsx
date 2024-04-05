@@ -3,10 +3,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const questionVariants = {
   open: {
-    color: "rgba(3, 6, 23, 0)"
+    color: "rgb(124, 58, 237)"
   },
   close: {
-    color: "rgb(255, 255, 255)"
+    color: "rgb(0, 0, 0)"
   }
 };
 
@@ -17,7 +17,7 @@ const arrowVariants = {
   },
   close: {
     rotate: 0,
-    color: "rgb(255, 255, 255)"
+    color: "rgb(0, 0, 0)"
   }
 };
 
@@ -32,7 +32,7 @@ const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
     setIsClicked(prev => !prev)
   };
   return (
-    <div className="border-b-[1px] border-b-slate-300">
+    <div className="border-b-[1px] border-b-slate-500 dark:border-b-slate-300">
       <button
         className="flex w-full items-center justify-between gap-4 py-6"
         onClick={onClick}
@@ -40,7 +40,7 @@ const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
         <motion.span
           variants={questionVariants}
           animate={isClicked ? 'open': 'close' }
-          className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-left text-lg font-medium"
+          className="text-left text-lg font-medium"
         >
           {question}
         </motion.span>
@@ -59,7 +59,7 @@ const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
           animate={{ height: "fit-content", marginBottom: 24 }}
           exit={{ height: 0, marginBottom: 0 }}
           // variants={{ show: { height: "fit-content", marginBottom: 24 } }}
-          className="overflow-hidden text-slate-300" //height: 0px; margin-bottom: 0px; => height: fit-content; margin-bottom: 24px;
+          className="overflow-hidden text-slate-700 dark:text-slate-300" //height: 0px; margin-bottom: 0px; => height: fit-content; margin-bottom: 24px;
         >
           <p>{answer}</p>
         </motion.div>}
@@ -90,7 +90,7 @@ const data = [
 
 const FAQs = () => {
   return (
-    <div className="no-scrollbar relative w-full overflow-hidden" style={{ display: "block" }}>
+    <div className="relative w-full overflow-hidden">
       <div className="px-4 py-12">
         <div className="mx-auto max-w-3xl">
           <h3 className="mb-4 text-center text-3xl font-semibold">

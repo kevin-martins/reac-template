@@ -2,7 +2,7 @@ type ButtonProps = {
   text: string
 };
 
-const Button = ({ text }: ButtonProps) => {
+const GradientButton = ({ text }: ButtonProps) => {
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
 
@@ -25,4 +25,4 @@ const Button = ({ text }: ButtonProps) => {
   );
 };
 
-export default Button;
+export default GradientButton;

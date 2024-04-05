@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const wrapperVariants = {
   hidden: { opacity: 0 },
   show: {
-    opacity: 1,
     transition: { staggerChildren: 0.005 }
   }
 };
@@ -18,13 +18,14 @@ type FadingTextProps = {
 };
 
 const FadingText = ({ text }: FadingTextProps) => {
-  // const text = "Wow, avez-vous déjà essayé de jongler avec des citrons tout en dansant la salsa sur un fil de fer ? C'est comme faire du breakdance avec des ananas en écoutant de la musique classique !"
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <motion.section
+      ref={ref}
       variants={wrapperVariants}
-      initial='hidden'
-      animate='show'
-      className='text-white'
+      animate={isInView ? 'show' : 'hidden'}
+      className='md:max-w-5xl'
     >
       {text
         .split('')
@@ -33,7 +34,7 @@ const FadingText = ({ text }: FadingTextProps) => {
             <motion.span
               key={i}
               variants={imageVariants}
-              className='text-white ease-in-out transition-all duration-500'
+              className='text-slate-400 md:max-w-5xl text-sm md:text-lg'
             >
               {letter}
             </motion.span>

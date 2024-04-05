@@ -11,12 +11,12 @@ enum Direction {
 type Props = {
   title: string,
   text: string,
-  direction: Direction
+  direction?: Direction
 };
 
-export const TextSection = ({ title, text, direction = Direction.UP }: Props) => {
+export const SlideText = ({ title, text, direction = Direction.UP }: Props) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   const movingDirection = (direction: Direction) => {
     switch (direction) {
       case Direction.UP: return "translateY(100px)";
@@ -39,7 +39,7 @@ export const TextSection = ({ title, text, direction = Direction.UP }: Props) =>
       <h1 className='text-3xl md:text-5xl w-max mx-auto skew-x-12'>
         {title}
       </h1>
-      <div className='bg-yellow-600 w-24 md:w-32 mt-3 m-auto h-[.3px]' />
+      <div className='bg-slate-600 w-full md:w-32 mt-3 m-auto h-[.3px]' />
       <p className='text-slate-400 mt-8 md:max-w-5xl px-12 text-sm md:text-lg mx-auto text-justify'>
         {text}
       </p>
@@ -47,4 +47,4 @@ export const TextSection = ({ title, text, direction = Direction.UP }: Props) =>
   );
 };
 
-export default TextSection;
+export default SlideText;

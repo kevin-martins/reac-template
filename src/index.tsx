@@ -18,28 +18,33 @@ import TextPage from './pages/TextPage';
 import LinkPage from './pages/LinkPage';
 import LoadingPage from './pages/LoadingPage';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <ErrorPage />,
+      children: [
+        { path: "subscription", element: <SubscriptionPage /> },
+        { path: "faq", element: <FAQPage /> },
+        { path: "contact", element: <ContactPage /> },
+        { path: "review", element: <ReviewPage /> },
+        { path: "modal", element: <ModalPage /> },
+        { path: "text", element: <TextPage /> },
+        { path: "table", element: <TablePage /> },
+        { path: "slider", element: <SliderPage /> },
+        { path: "button", element: <ButtonPage /> },
+        { path: "card", element: <CardPage /> },
+        { path: "dropdown", element: <DropdownPage /> },
+        { path: "link", element: <LinkPage /> },
+        { path: "loading", element: <LoadingPage /> },
+      ],
+    }
+  ],
   {
-    path: "/react-template",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    children: [
-      { path: "subscription", element: <SubscriptionPage /> },
-      { path: "faq", element: <FAQPage /> },
-      { path: "contact", element: <ContactPage /> },
-      { path: "review", element: <ReviewPage /> },
-      { path: "modal", element: <ModalPage /> },
-      { path: "text", element: <TextPage /> },
-      { path: "table", element: <TablePage /> },
-      { path: "slider", element: <SliderPage /> },
-      { path: "button", element: <ButtonPage /> },
-      { path: "card", element: <CardPage /> },
-      { path: "dropdown", element: <DropdownPage /> },
-      { path: "link", element: <LinkPage /> },
-      { path: "loading", element: <LoadingPage /> },
-    ],
-  },
-]);
+    basename: '/react-template'
+  }
+);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

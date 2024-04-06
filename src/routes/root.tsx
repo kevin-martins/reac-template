@@ -6,39 +6,39 @@ const routes = [
   {
     title: 'Pricing Plan',
     links: [
-      { to: '/react-template/subscription', text: 'Subscriptions' }
+      { to: '/subscription', text: 'Subscriptions' }
     ]
   },
   {
     title: 'Support',
     links: [
-      { to: '/react-template/faq', text: 'FAQ' },
-      { to: '/react-template/contact', text: 'Contacts' },
-      { to: '/react-template/review', text: 'Reviews' }
+      { to: '/faq', text: 'FAQ' },
+      { to: '/contact', text: 'Contacts' },
+      { to: '/review', text: 'Reviews' }
     ]
   },
   {
     title: 'Components',
     links: [
-      { to: '/react-template/loading', text: 'Loadings' },
-      { to: '/react-template/text', text: 'Texts' },
-      { to: '/react-template/modal', text: 'Modals' }
+      { to: '/loading', text: 'Loadings' },
+      { to: '/text', text: 'Texts' },
+      { to: '/modal', text: 'Modals' }
     ]
   },
   {
     title: 'Presentations',
     links: [
-      { to: '/react-template/table', text: 'Tables' },
-      { to: '/react-template/card', text: 'Cards' }
+      { to: '/table', text: 'Tables' },
+      { to: '/card', text: 'Cards' }
     ]
   },
   {
     title: 'User Intefactions',
     links: [
-      { to: '/react-template/slider', text: 'Sliders' },
-      { to: '/react-template/button', text: 'Buttons' },
-      { to: '/react-template/link', text: 'Links' },
-      { to: '/react-template/dropdown', text: 'Dropdowns' }
+      { to: '/slider', text: 'Sliders' },
+      { to: '/button', text: 'Buttons' },
+      { to: '/link', text: 'Links' },
+      { to: '/dropdown', text: 'Dropdowns' }
     ]
   }
 ];

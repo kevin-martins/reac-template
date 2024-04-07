@@ -1,12 +1,12 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-enum Direction {
+export enum Direction {
   UP,
   Down,
   Right,
   Left
-}
+};
 
 type Props = {
   title: string,

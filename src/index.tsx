@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import Root from "./routes/root";
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import ErrorPage from './pages/ErrorPage';
 import FAQPage from './pages/FAQPage';
 import ContactPage from './pages/ContactPage';
@@ -18,7 +18,7 @@ import TextPage from './pages/TextPage';
 import LinkPage from './pages/LinkPage';
 import LoadingPage from './pages/LoadingPage';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: "/",
@@ -42,7 +42,7 @@ const router = createBrowserRouter(
     }
   ],
   {
-    basename: '/react-template'
+    // basename: '/react-template'
   }
 );
 
@@ -51,6 +51,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    {/* <HashRouter>
+      <App />
+    </HashRouter> */}
     <RouterProvider router={router} />
   </React.StrictMode>
 );

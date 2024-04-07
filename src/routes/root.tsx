@@ -6,39 +6,39 @@ const routes = [
   {
     title: 'Pricing Plan',
     links: [
-      { to: '/subscription', text: 'Subscriptions' }
+      { to: '#/subscription', text: 'Subscriptions' }
     ]
   },
   {
     title: 'Support',
     links: [
-      { to: '/faq', text: 'FAQ' },
-      { to: '/contact', text: 'Contacts' },
-      { to: '/review', text: 'Reviews' }
+      { to: '#/faq', text: 'FAQ' },
+      { to: '#/contact', text: 'Contacts' },
+      { to: '#/review', text: 'Reviews' }
     ]
   },
   {
     title: 'Components',
     links: [
-      { to: '/loading', text: 'Loadings' },
-      { to: '/text', text: 'Texts' },
-      { to: '/modal', text: 'Modals' }
+      { to: '#/loading', text: 'Loadings' },
+      { to: '#/text', text: 'Texts' },
+      { to: '#/modal', text: 'Modals' }
     ]
   },
   {
     title: 'Presentations',
     links: [
-      { to: '/table', text: 'Tables' },
-      { to: '/card', text: 'Cards' }
+      { to: '#/table', text: 'Tables' },
+      { to: '#/card', text: 'Cards' }
     ]
   },
   {
     title: 'User Intefactions',
     links: [
-      { to: '/slider', text: 'Sliders' },
-      { to: '/button', text: 'Buttons' },
-      { to: '/link', text: 'Links' },
-      { to: '/dropdown', text: 'Dropdowns' }
+      { to: '#/slider', text: 'Sliders' },
+      { to: '#/button', text: 'Buttons' },
+      { to: '#/link', text: 'Links' },
+      { to: '#/dropdown', text: 'Dropdowns' }
     ]
   }
 ];

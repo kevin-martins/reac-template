@@ -5,7 +5,7 @@ type PricingButtonProps = {
   text: string,
   selected: boolean,
   setSelected: Dispatch<SetStateAction<string>>;
-} 
+};
 
 const PricingButton = ({
   text,
@@ -60,7 +60,7 @@ const tabs = ['Monthly', 'Annual'];
 type PricingWrapperProps = {
   selected: string,
   setSelected: Dispatch<SetStateAction<string>>;
-}
+};
 
 const PricingWrapper = ({ selected, setSelected }: PricingWrapperProps) => (
   <div className="flex items-center justify-center gap-3">
@@ -86,14 +86,15 @@ const pricingVariants = {
   initial: { y: -50, opacity: 0 },
   exit: { y: 50, opacity: 0 },
   show: { y: 0, opacity: 1 }
-}
+};
 
 type PricingAmountProps = {
   id: string
-  price: string
-}
+  price: number
+  color?: string
+};
 
-const PricingAmount = ({ id, price }: PricingAmountProps) => (
+const PricingAmount = ({ id, price, color = '#000' }: PricingAmountProps) => (
   <motion.p
     key={id}
     id={id}
@@ -102,131 +103,177 @@ const PricingAmount = ({ id, price }: PricingAmountProps) => (
     animate='show'
     exit='exit'
     className="text-6xl font-bold"
+    style={{ color }}
   >
     <span>{price}€</span>
     <span className="font-normal text-xl">/month</span>
   </motion.p>
-)
+);
 
-const pricing = (monthly: string, annual: string) => [
-  <PricingAmount id='monthly' price={monthly} />,
-  <PricingAmount id='annual' price={annual} />
-]
-
-const data = [
-  {
-    title: "Gratuit",
-    subTitle: "offre de base",
-    benefits: [
-      { access: true, text: "accès au pass de niveau 1" },
-      { access: true, text: "accès au pass de niveau 2" },
-      { access: false, text: "accès au pass de niveau 3" },
-      { access: false, text: "accès au pass de niveau 4" }
-    ]
+type CardProps = {
+  title: string,
+  subTitle: string,
+  isBest?: boolean,
+  price?: {
+    monthly: number,
+    annual: number
   },
-  {
-    title: "Novice",
-    subTitle: "bien pour commencer",
-    price: pricing('9.99', '7.99'),
-    benefits: [
-      { access: true, text: "accès au pass de niveau 1" },
-      { access: true, text: "accès au pass de niveau 2" },
-      { access: true, text: "accès au pass de niveau 3" },
-      { access: false, text: "accès au pass de niveau 4" }
-    ]
-  },
-  {
-    title: "Intermédiaire",
-    subTitle: "on commence à s'amuser",
-    price: pricing('14.99', '11.99'),
-    benefits: [
-      { access: true, text: "accès au pass de niveau 1" },
-      { access: true, text: "accès au pass de niveau 2" },
-      { access: true, text: "accès au pass de niveau 3" },
-      { access: true, text: "accès au pass de niveau 4" }
-    ]
-  }
-];
+  color?: string,
+  benefits: { access: boolean, text: string }[]
+};
 
 type PricingCardProps = {
+  card: CardProps,
   selected: string
+};
+
+const variantText = {
+
 }
 
-const PricingCard = ({ selected }: PricingCardProps) => {
+const PricingCard = ({ card, selected }: PricingCardProps) => {
   return (
-    <div className="flex flex-col lg:flex-row gap-8 lg:gap-4 w-full max-w-6xl mx-auto relative z-10">
-      {data.map((element, i) => (
-        <div key={i} className="w-full border-[1px] border-slate-700 bg-white p-6 rounded-xl">
-          <p className="text-2xl font-bold mb-2">{element.title}</p>
-          <p className="text-lg mb-6">{element.subTitle}</p>
-            {element?.price
-              ? <div className="overflow-hidden mb-8">
-                  <AnimatePresence mode='wait'>
-                    {element?.price[tabs.indexOf(selected)]}
-                  </AnimatePresence>
-                </div>
-              : <p
-                  className="text-6xl font-bold mb-8"
-                >
-                  0€
-                  <span className="font-normal text-xl">/month</span>
-                </p>
+    <div className="relative w-full border-[1px] border-slate-700 bg-white p-6 rounded-xl">
+      {card?.isBest &&
+        <motion.span
+          animate={{
+            rotate: [35, 25, 35],
+            x: [-5, 0, -5],
+            transition: {
+              duration: 10,
+              repeat: Infinity
             }
-          {element.benefits.map((benefit, i) => (
-            <div key={i} className="flex items-center gap-2 mb-2">
-              {benefit.access
-                ? <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
-                    <path d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z" fill="black" />
-                  </svg>
-                : <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
-                    <path d="M1 1L19 19" stroke="black" strokeWidth="2" />
-                    <path d="M1 19L19 1" stroke="black" strokeWidth="2" />
-                  </svg>
-              }
-              <span className="text-base">{benefit.text}</span>
+          }}
+          className='absolute text-lg z-10 border-[1px] px-3 py-1 rounded-lg border-black bg-white top-0 -right-8 font-medium'
+          style={{ color: card.color }}
+        >
+          Best option
+        </motion.span>
+      }
+      <p className="text-2xl font-bold mb-2">{card.title}</p>
+      <p className="text-lg mb-6">{card.subTitle}</p>
+        {card?.price
+          ? <div className="overflow-hidden mb-8">
+              <AnimatePresence mode='wait'>
+                {
+                  [
+                    <PricingAmount id='monthly' price={card.price.monthly} color={card.color} />,
+                    <PricingAmount id='annual' price={card.price.annual} color={card.color} />
+                  ][tabs.indexOf(selected)]
+                }
+              </AnimatePresence>
             </div>
-          ))}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full py-4 mt-8 font-semibold bg-black text-white rounded-lg uppercase"
-            tabIndex={0}
-          >
-            Sign up free
-          </motion.button>
+          : <p
+              className="text-6xl font-bold mb-8"
+            >
+              0€
+              <span className="font-normal text-xl">/month</span>
+            </p>
+        }
+      {card.benefits.map((benefit, i) => (
+        <div key={i} className="flex items-center gap-2 mb-2">
+          {benefit.access
+            ? <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+                <path d="M6.35588 11.8345L1.61455 7.17002L0 8.7472L6.35588 15L20 1.57718L18.3968 0L6.35588 11.8345Z" fill="black" />
+              </svg>
+            : <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+                <path d="M1 1L19 19" stroke="black" strokeWidth="2" />
+                <path d="M1 19L19 1" stroke="black" strokeWidth="2" />
+              </svg>
+          }
+          <span className="text-base">{benefit.text}</span>
         </div>
       ))}
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="w-full py-4 mt-8 font-semibold bg-black text-white rounded-lg uppercase"
+        tabIndex={0}
+        style={{ backgroundColor: card?.color }}
+      >
+        Sign up {card.title}
+      </motion.button>
     </div>
   );
 };
 
-const Pricing = () => {
-  const [selected, setSelected] = useState(tabs[0])
+const pricingCards = [
+  {
+    title: "Free",
+    subTitle: "The essentials",
+    benefits: [
+      { access: true, text: "Listen to music ad-supported" },
+      { access: true, text: "Shuffle play" },
+      { access: false, text: "Limited skips" },
+      { access: false, text: "Standard audio quality" }
+    ]
+  },
+  {
+    title: "Premium",
+    subTitle: "All the features",
+    isBest: true,
+    price: {
+      monthly: 9.99,
+      annual: 7.99
+    },
+    color: '#0d9488',
+    benefits: [
+      { access: true, text: "No ad interruptions" },
+      { access: true, text: "Listen offline" },
+      { access: true, text: "Unlimited skips" },
+      { access: true, text: "Play any song" }
+    ]
+  },
+  {
+    title: "Family",
+    subTitle: "For everyone",
+    price: {
+      monthly: 15.99,
+      annual: 11.99
+    },
+    benefits: [
+      { access: true, text: "6 Premium accounts" },
+      { access: true, text: "Family Mix" },
+      { access: true, text: "Parental controls" },
+      { access: true, text: "Listen on multiple devices" }
+    ]
+  }
+];
 
+const Pricing = () => {
+  const [selected, setSelected] = useState(tabs[0]);
   return (
-    <section className="relative w-full dark:text-white text-black px-4 lg:px-8 py-12 lg:py-24">
+    <section className="relative w-full dark:text-white text-black px-4 lg:px-8 py-12 lg:py-24 overflow-hidden">
       <div className="dark:text-white mb-12 lg:mb-24 relative z-10">
         <h3 className="font-semibold text-5xl lg:text-7xl text-center mb-6">Pricing plans</h3>
         <p className="text-center mx-auto max-w-lg mb-8">Lorem ipsum dolor sit amet consectetur. Pulvinar eu rhoncus tincidunt eget mattis netus ridiculus.</p>
         <PricingWrapper selected={selected} setSelected={setSelected} />
       </div>
-      <PricingCard selected={selected} />
-      {/* <motion.div
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-4 w-full max-w-6xl mx-auto relative z-10">
+        {pricingCards.map((card, i) => (
+          <PricingCard key={i} card={card} selected={selected} />
+        ))}
+        </div>
+      <motion.div
         animate={{
-          rotate: 360
+          rotate: 30,
+          transition: {
+            duration: 10,
+            repeat: Infinity
+          }
         }}
-        transition={{
-          duration: 5,
-          repeatDelay: 10,
-          ease: "linear",
-          repeat: Infinity,
-        }}
-        className="w-[450px] h-[450px] rounded-full border-2 border-slate-100 border-dotted absolute z-0 -left-[250px] -top-[200px]"
+        className="w-[450px] h-[450px] rounded-full border-2 border-slate-500 dark:border-slate-100 border-dotted absolute z-0 -left-[250px] -top-[200px]"
       />
-      <div
-        className="w-[450px] h-[450px] rounded-full border-2 border-slate-500 border-dotted absolute z-0 -right-[250px] -bottom-[200px]"
-        
-      /> */}
+      <motion.div
+        animate={{
+          rotate: -30,
+          transition: {
+            duration: 10,
+            repeat: Infinity
+          }
+        }}
+        className="w-[450px] h-[450px] rounded-full border-2 border-slate-500 dark:border-slate-100 border-dotted absolute z-0 -right-[250px] -bottom-[200px]"
+      />
     </section>
   );
 };

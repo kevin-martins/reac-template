@@ -253,7 +253,7 @@ const Pricing = () => {
         {pricingCards.map((card, i) => (
           <PricingCard key={i} card={card} selected={selected} />
         ))}
-        </div>
+      </div>
       <motion.div
         animate={{
           rotate: 30,

@@ -29,7 +29,9 @@ const routes = [
     title: 'Presentations',
     links: [
       { to: '#/table', text: 'Tables' },
-      { to: '#/card', text: 'Cards' }
+      { to: '#/list', text: 'Lists' },
+      { to: '#/card', text: 'Cards' },
+      { to: '#/title', text: 'Titles' }
     ]
   },
   {

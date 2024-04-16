@@ -37,13 +37,14 @@ const ImageSlider = () => {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const paginate = (newDirection: number) => {
-    // if (page + newDirection < 0) {
-    //   setPage([images.length - 1, -1]);
-    // } else if (page + newDirection > images.length - 1) {
-    //   setPage([0, 1]);
-    // } else {
-    setPage([page + newDirection, newDirection]);
-    // }
+    if (page === 0 && newDirection === -1) {
+      setPage([images.length - 1, -1]);
+    }  else if (page === images.length - 1 && newDirection === 1) {
+      setPage([0, 1]);
+    }
+    else {
+      setPage([page + newDirection, newDirection]);
+    }
   };
 
   return (

@@ -17,6 +17,7 @@ import ReviewPage from './pages/ReviewPage';
 import TextPage from './pages/TextPage';
 import LinkPage from './pages/LinkPage';
 import LoadingPage from './pages/LoadingPage';
+import ListPage from './pages/ListPage';
 
 const router = createHashRouter(
   [
@@ -38,6 +39,7 @@ const router = createHashRouter(
         { path: "dropdown", element: <DropdownPage /> },
         { path: "link", element: <LinkPage /> },
         { path: "loading", element: <LoadingPage /> },
+        { path: "list", element: <ListPage /> },
       ],
     }
   ],
@@ -51,9 +53,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* <HashRouter>
-      <App />
-    </HashRouter> */}
     <RouterProvider router={router} />
   </React.StrictMode>
 );

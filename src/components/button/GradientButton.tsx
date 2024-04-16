@@ -3,15 +3,9 @@ type ButtonProps = {
 };
 
 const GradientButton = ({ text }: ButtonProps) => {
-
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-
-  };
-
   return (
     <button
       className="group relative w-fit transition-transform duration-300 active:scale-95"
-      onClick={handleClick}
     >
       <div
         className="relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110"

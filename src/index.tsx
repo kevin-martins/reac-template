@@ -19,6 +19,7 @@ import LinkPage from './pages/LinkPage';
 import LoadingPage from './pages/LoadingPage';
 import ListPage from './pages/ListPage';
 import TitlePage from './pages/TitlePage';
+import TogglePage from './pages/TogglePage';
 
 const router = createHashRouter(
   [
@@ -41,6 +42,7 @@ const router = createHashRouter(
         { path: "link", element: <LinkPage /> },
         { path: "loading", element: <LoadingPage /> },
         { path: "list", element: <ListPage /> },
+        { path: "toggle", element: <TogglePage /> },
         { path: "title", element: <TitlePage /> }
       ],
     }

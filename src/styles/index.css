@@ -21,8 +21,8 @@ code {
     monospace;
 }
 
-.scrollbar-none {
-  scrollbar-width: none;
+.scrollbar-none::-webkit-scrollbar {
+  width: 0;
 }
 
 .left-nav-position {
@@ -30,7 +30,7 @@ code {
 }
 
 .nav-height {
-  height: var(--nav-height);
+  height: calc(100vh - 54px);
 }
 
 .grid-container {

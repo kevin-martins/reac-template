@@ -2,14 +2,13 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const wrapperVariants = {
-  hidden: {  },
+  // hidden: { scale: 0 },
   show: {
-    // opacity: 1,
-    transition: { staggerChildren: 0.0005 }
+    transition: { staggerChildren: 0.005 }
   }
 };
 
-const imageVariants = {
+const letterVariants = {
   hidden: { scale: 0 },
   show: { scale: 1 }
 };
@@ -25,8 +24,8 @@ const GrowText = ({ text }: GrowTextProps) => {
     <motion.section
       ref={ref}
       variants={wrapperVariants}
-      initial='hidden'
-      animate={isInView ? 'show' : 'hidden'}
+      // initial='hidden'
+      animate={isInView && 'show'}
       className='md:max-w-5xl'
     >
       {text
@@ -35,7 +34,7 @@ const GrowText = ({ text }: GrowTextProps) => {
           return (
             <motion.span
               key={i}
-              variants={imageVariants}
+              variants={letterVariants}
               className='text-slate-400 md:max-w-5xl text-sm md:text-lg'
             >
               {letter}

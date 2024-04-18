@@ -1,10 +1,7 @@
-import React from 'react'
 import Wrapper from '../components/Wrapper';
 import SlideText, { Direction } from '../components/text/SlideText';
 import FadingText from '../components/text/FadingText';
 import GrowText from '../components/text/GrowText';
-
-// title, text, direction = Direction.UP
 
 const TextPage = () => {
   return (
@@ -25,6 +22,11 @@ const TextPage = () => {
       </Wrapper>
       <Wrapper title='Fade text'>
         <FadingText
+          text="Imaginez-vous jongler avec les agrumes acidulés tout en exécutant des pas de danse enflammés sur un mince câble métallique. Cela ressemble à défier la gravité avec des fruits exotiques en harmonie avec des mélodies classiques qui vous transportent dans un monde de rythme et de mouvement !"
+        />
+      </Wrapper>
+      <Wrapper title='Grow text'>
+        <GrowText
           text="Imaginez-vous jongler avec les agrumes acidulés tout en exécutant des pas de danse enflammés sur un mince câble métallique. Cela ressemble à défier la gravité avec des fruits exotiques en harmonie avec des mélodies classiques qui vous transportent dans un monde de rythme et de mouvement !"
         />
       </Wrapper>

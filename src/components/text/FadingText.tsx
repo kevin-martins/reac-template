@@ -8,7 +8,7 @@ const wrapperVariants = {
   }
 };
 
-const imageVariants = {
+const letterVariants = {
   hidden: { opacity: 0 },
   show: { opacity: 1 }
 };
@@ -33,7 +33,7 @@ const FadingText = ({ text }: FadingTextProps) => {
           return (
             <motion.span
               key={i}
-              variants={imageVariants}
+              variants={letterVariants}
               className='text-slate-400 md:max-w-5xl text-sm md:text-lg'
             >
               {letter}

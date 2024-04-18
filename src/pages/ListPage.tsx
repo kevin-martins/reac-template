@@ -1,6 +1,6 @@
-import React from 'react'
 import Wrapper from '../components/Wrapper';
 import CheckedList from '../components/lists/CheckedList';
+import ContactList from '../components/lists/ContactList';
 
 const list = [
   "Unlock your dreams, absolutely free!",
@@ -15,6 +15,9 @@ const ListPage = () => {
     <div>
       <Wrapper title='Checked'>
         <CheckedList list={list} />
+      </Wrapper>
+      <Wrapper title='Contact list'>
+        <ContactList />
       </Wrapper>
     </div>
   );

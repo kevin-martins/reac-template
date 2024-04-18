@@ -47,10 +47,10 @@ const routes = [
 
 const Root = () => {
   return (
-    <main>
+    <main className="h-full">
       <NavBar />
-      <div className="grid grid-container">
-        <nav className="scrollbar-none sticky top-[54px] left-nav-position col-span-1 hidden h-full flex-col gap-1 overflow-y-scroll border-r-2 border-slate-300 px-3 py-6 md:flex">
+      <div className="block h-full md:grid md:grid-cols-[200px_calc(100%_-_200px)]">
+        <nav className="scrollbar-none sticky top-[54px] col-span-1 hidden h-[calc(100vh_-_54px)] flex-col gap-1 overflow-y-scroll bg-white px-3 py-6 md:flex">
           {routes.map((route, i) => {
             return (
               <div key={i}>
@@ -79,7 +79,7 @@ const Root = () => {
             )
           })}
         </nav>
-        <div className="px-3 col-span-1">
+        <div className="relative px-3 mt-20 col-span-1">
           <Outlet />
         </div>
       </div>

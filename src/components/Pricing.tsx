@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type PricingButtonProps = {
@@ -69,7 +69,6 @@ const PricingWrapper = ({ selected, setSelected }: PricingWrapperProps) => (
         return (
           <PricingButton key={i} text={tab} selected={selected === tab} setSelected={setSelected} />
         )
-
       } else {
         return (
           <div key={i} className="relative">
@@ -126,10 +125,6 @@ type PricingCardProps = {
   card: CardProps,
   selected: string
 };
-
-const variantText = {
-
-}
 
 const PricingCard = ({ card, selected }: PricingCardProps) => {
   return (

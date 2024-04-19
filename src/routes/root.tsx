@@ -1,6 +1,7 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import NavBar from "../components/navbar/NavBar";
 import { motion } from 'framer-motion';
+import { useState } from "react";
 
 const routes = [
   {
@@ -46,12 +47,28 @@ const routes = [
   }
 ];
 
+const linkVariants = {
+  close: {
+    x: 0,
+    transition: {
+      duration: .3
+    }
+  },
+  open: {
+    x: 10,
+    transition: {
+      duration: .3
+    }
+  }
+};
+
 const Root = () => {
+  const { pathname } = useLocation();
   return (
     <main className="h-full">
       <NavBar />
       <div className="block h-full md:grid md:grid-cols-[200px_calc(100%_-_200px)]">
-        <nav className="scrollbar-none sticky top-[54px] col-span-1 hidden h-[calc(100%_-_54px)] flex-col gap-1 overflow-y-scroll bg-white px-3 py-6 md:flex">
+        <nav className="scrollbar-none sticky top-[54px] col-span-1 hidden h-[calc(100vh_-_54px)] flex-col gap-1 overflow-y-scroll bg-white px-3 py-6 md:flex">
           {routes.map((route, i) => {
             return (
               <div key={i}>
@@ -60,9 +77,11 @@ const Root = () => {
                   <motion.a
                     key={j}
                     href={link.to}
-                    whileHover={{ x: 10, transition: { duration: .3 } }}
+                    variants={linkVariants}
+                    whileHover='open'
+                    animate={link.to === '#'+pathname ? 'open' : 'close' }
                     whileTap={{ scale: 0.95 }}
-                    className="relative z-0 flex px-2.5 py-1 transition-colors duration-300 overflow-hidden
+                    className={`relative z-0 flex px-2.5 py-1 transition-colors duration-300 overflow-hidden
                       before:absolute before:inset-0
                       before:-z-10 before:translate-x-[-180%]
                       before:scale-[2.5]
@@ -71,7 +90,8 @@ const Root = () => {
                       before:content-[&quot;&quot;]
                       hover:scale-105 hover:text-white
                       hover:before:translate-x-[0%]
-                    "
+                      ${link.to === '#'+pathname ? 'bg-slate-800 text-white' : ''}
+                    `}
                   >
                     {link.text}
                   </motion.a>

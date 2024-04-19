@@ -1,14 +1,14 @@
-import { motion } from 'framer-motion'
-import React from 'react'
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const infoVariants = {
   hidden: { y: -30, opacity: 0 },
-  show: { y: 0, opacity: 1 }
+  open: { y: 0, opacity: 1 }
 };
 
 type ElementProps = {
   text: string
-}
+};
 
 const Elements = ({ text }: ElementProps) => {
   return (
@@ -25,21 +25,25 @@ const Elements = ({ text }: ElementProps) => {
 };
 
 const wrapperVariants = {
-  show: {
-    transition: { staggerChildren: 0.25 }
+  hidden: {},
+  open: {
+    transition: { staggerChildren: .25 }
   }
 };
 
 type CheckedList = {
   list: string[]
-}
+};
 
 const CheckedList = ({ list }: CheckedList) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <motion.ul
+      ref={ref}
       variants={wrapperVariants}
       initial='hidden'
-      animate='show'
+      animate={isInView && 'open'}
       className='flex flex-col z-10 text-black dark:text-white'
     >
       {list.map((text, i) => (

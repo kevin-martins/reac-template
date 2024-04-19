@@ -111,7 +111,7 @@ const data = [
 const ContactList = () => {
   return (
     <div className="relative rounded-xl p-3">
-      <div className="relative max-w-md mx-auto bg-white dark:bg-slate-800 shadow-lg h-80 overflow-auto ring-1 ring-slate-900/5 -my-px">
+      <div className="relative max-w-md mx-auto bg-white dark:bg-slate-800 shadow-lg h-80 overflow-y-scroll ring-1 ring-slate-900/5 -my-px">
         {data.map((data, i) => (
           <LetterSection key={i} letter={data.letter} profiles={data.profiles} />
         ))}

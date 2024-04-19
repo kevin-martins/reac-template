@@ -41,7 +41,7 @@ const routes = [
     links: [
       { to: '#/slider', text: 'Sliders' },
       { to: '#/button', text: 'Buttons' },
-      { to: '#/toggle', text: 'Toggles' },
+      // { to: '#/toggle', text: 'Toggles' },
       { to: '#/link', text: 'Links' },
       { to: '#/dropdown', text: 'Dropdowns' }
     ]

@@ -47,7 +47,7 @@ const router = createHashRouter(
 
         { path: "slider", element: <SliderPage /> },
         { path: "button", element: <ButtonPage /> },
-        { path: "toggle", element: <TogglePage /> },
+        // { path: "toggle", element: <TogglePage /> },
         { path: "link", element: <LinkPage /> },
         { path: "dropdown", element: <DropdownPage /> },
       ],

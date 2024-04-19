@@ -11,7 +11,7 @@ type Props = {
 const CardWrapper = ({ title, children }: Props) => (
   <div className="py-2">
     <h2 className="text-xl">{title}</h2>
-    <div className="bg-white h-[500px] overflow-y-scroll border border-slate-300">
+    <div className="bg-white h-[500px] overflow-y-scroll border border-black">
       {children}
     </div>
   </div>

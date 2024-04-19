@@ -20,6 +20,7 @@ import LoadingPage from './pages/LoadingPage';
 import ListPage from './pages/ListPage';
 import TitlePage from './pages/TitlePage';
 import TogglePage from './pages/TogglePage';
+import TestimonialPage from './pages/TestimonialPage';
 
 const router = createHashRouter(
   [
@@ -29,27 +30,29 @@ const router = createHashRouter(
       errorElement: <ErrorPage />,
       children: [
         { path: "subscription", element: <SubscriptionPage /> },
+
         { path: "faq", element: <FAQPage /> },
         { path: "contact", element: <ContactPage /> },
         { path: "review", element: <ReviewPage /> },
-        { path: "modal", element: <ModalPage /> },
+        { path: "testimonial", element: <TestimonialPage /> },
+
+        { path: "loading", element: <LoadingPage /> },
         { path: "text", element: <TextPage /> },
+        { path: "modal", element: <ModalPage /> },
+
         { path: "table", element: <TablePage /> },
+        { path: "list", element: <ListPage /> },
+        { path: "card", element: <CardPage /> },
+        { path: "title", element: <TitlePage /> },
+
         { path: "slider", element: <SliderPage /> },
         { path: "button", element: <ButtonPage /> },
-        { path: "card", element: <CardPage /> },
-        { path: "dropdown", element: <DropdownPage /> },
-        { path: "link", element: <LinkPage /> },
-        { path: "loading", element: <LoadingPage /> },
-        { path: "list", element: <ListPage /> },
         { path: "toggle", element: <TogglePage /> },
-        { path: "title", element: <TitlePage /> }
+        { path: "link", element: <LinkPage /> },
+        { path: "dropdown", element: <DropdownPage /> },
       ],
     }
-  ],
-  {
-    // basename: '/react-template'
-  }
+  ]
 );
 
 const root = ReactDOM.createRoot(

@@ -15,7 +15,8 @@ const routes = [
     links: [
       { to: '#/faq', text: 'FAQ' },
       { to: '#/contact', text: 'Contacts' },
-      { to: '#/review', text: 'Reviews' }
+      { to: '#/review', text: 'Reviews' },
+      { to: '#/testimonial', text: 'Testimonials' }
     ]
   },
   {

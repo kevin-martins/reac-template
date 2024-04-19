@@ -67,7 +67,7 @@ const Root = () => {
   const { pathname } = useLocation();
   return (
     <main className="h-full">
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="block h-full md:grid md:grid-cols-[200px_calc(100%_-_200px)]">
         <nav className="scrollbar-none sticky top-[54px] col-span-1 hidden h-[calc(100vh_-_54px)] flex-col gap-1 overflow-y-scroll bg-white px-3 py-6 md:flex">
           {routes.map((route, i) => {

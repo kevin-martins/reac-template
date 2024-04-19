@@ -405,7 +405,7 @@
 
 const NavBar = () => {
   return (
-    <div className='fixed p-5 z-50 w-full bg-slate-700 top-0 shadow-lg'>
+    <div className='fixed h-[54px] z-50 w-full bg-slate-700 shadow-lg text-white'>
       hello
     </div>
   )

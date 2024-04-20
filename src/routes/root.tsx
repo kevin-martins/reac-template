@@ -30,6 +30,7 @@ const routes = [
   {
     title: 'Presentations',
     links: [
+      { to: '#/carousel', text: 'Carousels' },
       { to: '#/table', text: 'Tables' },
       { to: '#/list', text: 'Lists' },
       { to: '#/card', text: 'Cards' },

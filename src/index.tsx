@@ -21,6 +21,7 @@ import ListPage from './pages/ListPage';
 import TitlePage from './pages/TitlePage';
 import TogglePage from './pages/TogglePage';
 import TestimonialPage from './pages/TestimonialPage';
+import CarouselPage from './pages/CarouselPage';
 
 const router = createHashRouter(
   [
@@ -40,6 +41,7 @@ const router = createHashRouter(
         { path: "text", element: <TextPage /> },
         { path: "modal", element: <ModalPage /> },
 
+        { path: "carousel", element: <CarouselPage /> },
         { path: "table", element: <TablePage /> },
         { path: "list", element: <ListPage /> },
         { path: "card", element: <CardPage /> },

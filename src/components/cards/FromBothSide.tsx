@@ -2,27 +2,50 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const rightVariants = {
-  hidden: { x: 500, opacity: 0 },
-  open: { x: -10, opacity: 1, transition: { duration: 1 } }
-}
+  hidden: {
+    x: 500,
+    opacity: 0
+  },
+  open: {
+    x: -10,
+    opacity: 1,
+    transition: {
+      duration: .6,
+      type: "spring",
+      bounce: .4,
+    }
+  }
+};
 
 const leftVariants = {
-  hidden: { x: -500, opacity: 0 },
-  open: { x: 0, opacity: 1, transition: { duration: 1 } }
-}
+  hidden: {
+    x: -500,
+    opacity: 0
+  },
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1.2,
+      type: "spring",
+      bounce: .5,
+    }
+  }
+};
 
 const FromBothSide = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false }); 
   return (
     <div
-      ref={ref} 
-      className='flex w-full h-full items-center justify-center py-10'
+      ref={ref}
+      className='flex w-full h-full items-center justify-center'
     >
       <motion.div
         variants={leftVariants}
         initial='hidden'
-        animate={isInView && 'open'}
+        animate={isInView ? 'open' : 'hidden'}
+        transition={{ ease: "easeOut" }}
         className='p-12 max-w-[500px] bg-gray-800 text-white'
       >
         <h1

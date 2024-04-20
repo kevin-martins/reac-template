@@ -1,6 +1,7 @@
 import Wrapper from '../components/Wrapper';
 import CheckedList from '../components/lists/CheckedList';
 import ContactList from '../components/lists/ContactList';
+import PictureList from '../components/lists/PictureList';
 
 const list = [
   "Unlock your dreams, absolutely free!",
@@ -16,8 +17,11 @@ const ListPage = () => {
       <Wrapper title='Checked'>
         <CheckedList list={list} />
       </Wrapper>
-      <Wrapper title='Contact list'>
+      <Wrapper title='Contacts'>
         <ContactList />
+      </Wrapper>
+      <Wrapper title='Pictures'>
+        <PictureList />
       </Wrapper>
     </div>
   );

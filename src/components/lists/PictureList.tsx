@@ -18,12 +18,12 @@ const PictureList = () => {
       variants={wrapperVariants}
       initial='hidden'
       animate='show'
-      className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'
+      className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-5'
     >
       {Array.from({ length: 12 }, (_, index) => index + 1).map((i) => (
         <div
           key={i}
-          className='relative h-full z-0 flex items-center overflow-hidden rounded-lg
+          className='relative h-full z-0 flex items-center overflow-hidden rounded-lg shrink-0
             duration-700 scale-95
             
             before:absolute before:inset-0

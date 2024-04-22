@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 type Props = {
   text: string
-}
+};
 
 const SpotlightButton = ({ text }: Props) => {
   const btnRef = useRef<HTMLButtonElement | null>(null);

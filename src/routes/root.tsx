@@ -45,6 +45,12 @@ const routes = [
       { to: '#/link', text: 'Links' },
       { to: '#/dropdown', text: 'Dropdowns' }
     ]
+  },
+  {
+    title:'Others',
+    links: [
+      { to: '#/notification', text: 'Notifications' }
+    ]
   }
 ];
 

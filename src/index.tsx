@@ -21,6 +21,7 @@ import ListPage from './pages/ListPage';
 import TogglePage from './pages/TogglePage';
 import TestimonialPage from './pages/TestimonialPage';
 import CarouselPage from './pages/CarouselPage';
+import NotificationPage from './pages/NotificationPage';
 
 const router = createHashRouter(
   [
@@ -50,6 +51,8 @@ const router = createHashRouter(
         // { path: "toggle", element: <TogglePage /> },
         { path: "link", element: <LinkPage /> },
         { path: "dropdown", element: <DropdownPage /> },
+        
+        { path: "notification", element: <NotificationPage /> },
       ],
     }
   ]

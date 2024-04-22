@@ -31,7 +31,7 @@ const RevealText = ({ text }: RevealTextProps) => {
             <motion.span
               key={i}
               variants={letterVariants}
-              className='text-slate-400 md:max-w-5xl text-sm md:text-lg'
+              className='text-black md:max-w-5xl text-sm md:text-lg'
             >
               {letter}
             </motion.span>

@@ -1,27 +1,27 @@
 import Wrapper from '../components/Wrapper';
 import SlideText, { Direction } from '../components/text/SlideText';
-import FadingText from '../components/text/FadingText';
+import RevealText from '../components/text/RevealText';
 import AutoSwapText from '../components/text/AutoSwapText';
 import HiddenText from '../components/text/HiddenText';
 
 const TextPage = () => {
+  const text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic expedita delectus fugit libero, neque facere quia officiis, perferendis quaerat fugiat amet harum ex cumque facilis porro maiores ipsum assumenda? Earum aliquid eum ipsa nostrum itaque porro id laborum reiciendis velit sint consectetur unde magni distinctio doloribus, facere dolores voluptate accusantium laudantium at, ratione iste voluptatum quo, ducimus esse. Animi!'
   return (
     <div>
       <Wrapper title='Slide to right'>
         <SlideText
-          title="Étoiles et Molécules !"
-          text="Dans un univers où les étoiles scintillent et où les atomes dansent, l'exploration scientifique nous ouvre les portes de la connaissance. De l'infiniment grand à l'infiniment petit, chaque découverte nous émerveille et nous pousse à repousser les frontières du savoir. Préparez-vous à embarquer pour un périple captivant à travers les mystères de l'univers et les secrets de la matière !"
-          direction={Direction.Right}
+          title="This is a title !"
+          text={text}
         />
       </Wrapper>
       <Wrapper title='Reveal'>
-        <FadingText
-          text="Imaginez-vous jongler avec les agrumes acidulés tout en exécutant des pas de danse enflammés sur un mince câble métallique. Cela ressemble à défier la gravité avec des fruits exotiques en harmonie avec des mélodies classiques qui vous transportent dans un monde de rythme et de mouvement !"
+        <RevealText
+          text={text}
         />
       </Wrapper>
       <Wrapper title='Hidden' padding={false}>
         <HiddenText
-          text="Imaginez-vous jongler avec les agrumes acidulés tout en exécutant des pas de danse enflammés sur un mince câble métallique. Cela ressemble à défier la gravité avec des fruits exotiques en harmonie avec des mélodies classiques qui vous transportent dans un monde de rythme et de mouvement !"
+          text={text}
         />
       </Wrapper>
       <Wrapper title='Auto swap'>

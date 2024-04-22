@@ -1,10 +1,8 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 const wrapperVariants = {
-  hidden: { opacity: 0 },
   show: {
-    transition: { staggerChildren: 0.005 }
+    transition: { staggerChildren: 0.01 }
   }
 };
 
@@ -13,19 +11,18 @@ const letterVariants = {
   show: { opacity: 1 }
 };
 
-type FadingTextProps = {
+type RevealTextProps = {
   text: string
 };
 
-const FadingText = ({ text }: FadingTextProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+const RevealText = ({ text }: RevealTextProps) => {
   return (
     <motion.section
-      ref={ref}
       variants={wrapperVariants}
-      animate={isInView ? 'show' : 'hidden'}
-      className='md:max-w-5xl'
+      initial="hidden"
+      animate="show"
+      viewport={{ once: true }}
+      className='md:max-w-5xl px-10'
     >
       {text
         .split('')
@@ -45,4 +42,4 @@ const FadingText = ({ text }: FadingTextProps) => {
   );
 };
 
-export default FadingText;
+export default RevealText;

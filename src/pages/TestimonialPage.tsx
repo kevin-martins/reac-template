@@ -1,12 +1,12 @@
 import React from 'react'
-import BubbleTestimonial from '../components/testimonials/BubbleTestimonial';
+import DialogueTestimonial from '../components/testimonials/DialogueTestimonial';
 import Wrapper from '../components/Wrapper';
 
 const TestimonialPage = () => {
   return (
     <div>
-      <Wrapper title='Bubble'>
-        <BubbleTestimonial />
+      <Wrapper title='Dialogue'>
+        <DialogueTestimonial />
       </Wrapper>
     </div>
   );

@@ -1,4 +1,4 @@
-const BubbleTestimonial = () => {
+const DialogueTestimonial = () => {
   return (
     <figure className="flex w-[550px]">
       <figcaption className='relative px-3 pt-5 rounded-l-lg border border-slate-400'>
@@ -24,4 +24,4 @@ const BubbleTestimonial = () => {
   );
 };
 
-export default BubbleTestimonial;
+export default DialogueTestimonial;

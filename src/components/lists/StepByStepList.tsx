@@ -29,33 +29,34 @@ const titleVariants = {
   }
 };
 
-const TransitionStateList = () => {
+const StepByStepList = () => {
   enum State {
-    Init,
-    Running,
-    End
+    Step1,
+    Step2,
+    Step3
   };
-  const [state, setState] = useState<State>(State.Init);
+  const [state, setState] = useState<State>(State.Step1);
   const [doAnimation, setDoAnimation] = useState(true);
   const explanationData = {
-    [State.Init]: {
-      title: 'Initialisation',
+    [State.Step1]: {
+      title: 'Step 1:',
       steps: [
         "- Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "- Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "- Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       ]
     },
-    [State.Running]: {
-      title: 'Running',
+    [State.Step2]: {
+      title: 'Step 2:',
       steps: [
         "- Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "- Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       ]
     },
-    [State.End]: {
-      title: 'Completed',
+    [State.Step3]: {
+      title: 'Step 3:',
       steps: [
+        "- Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "- Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "- Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "- Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -64,11 +65,11 @@ const TransitionStateList = () => {
   };
   
   useEffect(() => {
-    setDoAnimation(false)
+    setDoAnimation(false);
     setTimeout(() => {
-      setDoAnimation(true)
+      setDoAnimation(true);
     }, 650)
-  }, [state])
+  }, [state]);
 
   return (
     <div className='mx-auto mb-12'>
@@ -77,7 +78,7 @@ const TransitionStateList = () => {
           variants={titleVariants}
           initial='hidden'
           animate={doAnimation ? 'show' : 'hidden'}
-          className='font-medium text-white'
+          className='font-medium text-black'
         >
           {explanationData[state]?.title}
         </motion.h1>
@@ -85,7 +86,7 @@ const TransitionStateList = () => {
           variants={listWrapperVariants}
           initial='hidden'
           animate={doAnimation ? 'show' : 'hidden'}
-          className='text-slate-200 ml-6'
+          className='text-slate-900 ml-6'
         >
           {explanationData[state]?.steps.map((step: any, i: number) => {
             return (
@@ -104,8 +105,29 @@ const TransitionStateList = () => {
           })}
         </motion.ul>
       </div>
+
+      <div className='space-x-2 mx-auto mt-10 w-fit'>
+        <button
+          onClick={() => setState(State.Step1)}
+          className='px-6 py-2 bg-blue-400 hover:bg-blue-600 rounded-lg text-white hover:scale-110'
+        >
+          Step 1
+        </button>
+        <button
+          onClick={() => setState(State.Step2)}
+          className='px-6 py-2 bg-green-400 hover:bg-green-600 rounded-lg text-white hover:scale-110'
+        >
+          Step 2
+        </button>
+        <button
+          onClick={() => setState(State.Step3)}
+          className='px-6 py-2 bg-red-400 hover:bg-red-600 rounded-lg text-white hover:scale-110'
+        >
+          Step  3
+        </button>
+      </div>
     </div>
   );
 };
 
-export default TransitionStateList;
+export default StepByStepList;

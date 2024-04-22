@@ -5,7 +5,7 @@ const listWrapperVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { delayChildren: .7, staggerChildren: 0.01 }
+    transition: { delayChildren: .7, staggerChildren: 0.008 }
   }
 };
 
@@ -109,19 +109,19 @@ const StepByStepList = () => {
       <div className='space-x-2 mx-auto mt-10 w-fit'>
         <button
           onClick={() => setState(State.Step1)}
-          className='px-6 py-2 bg-blue-400 hover:bg-blue-600 rounded-lg text-white hover:scale-110'
+          className='px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-white hover:scale-110 active:scale-100'
         >
           Step 1
         </button>
         <button
           onClick={() => setState(State.Step2)}
-          className='px-6 py-2 bg-green-400 hover:bg-green-600 rounded-lg text-white hover:scale-110'
+          className='px-6 py-2 bg-green-500 hover:bg-green-600 rounded-lg text-white hover:scale-110 active:scale-100'
         >
           Step 2
         </button>
         <button
           onClick={() => setState(State.Step3)}
-          className='px-6 py-2 bg-red-400 hover:bg-red-600 rounded-lg text-white hover:scale-110'
+          className='px-6 py-2 bg-red-500 hover:bg-red-600 rounded-lg text-white hover:scale-110 active:scale-100'
         >
           Step  3
         </button>

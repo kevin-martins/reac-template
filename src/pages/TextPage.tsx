@@ -1,8 +1,7 @@
 import Wrapper from '../components/Wrapper';
 import SlideText, { Direction } from '../components/text/SlideText';
 import FadingText from '../components/text/FadingText';
-import GrowText from '../components/text/GrowText';
-import FallChangeText from '../components/text/FallChangeText';
+import AutoSwapText from '../components/text/AutoSwapText';
 import HiddenText from '../components/text/HiddenText';
 
 const TextPage = () => {
@@ -26,7 +25,7 @@ const TextPage = () => {
         />
       </Wrapper>
       <Wrapper title='Auto swap'>
-        <FallChangeText />
+        <AutoSwapText />
       </Wrapper>
     </div>
   );

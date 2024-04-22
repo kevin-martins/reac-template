@@ -15,7 +15,7 @@ const TextPage = () => {
           direction={Direction.Right}
         />
       </Wrapper>
-      <Wrapper title='Fade'>
+      <Wrapper title='Reveal'>
         <FadingText
           text="Imaginez-vous jongler avec les agrumes acidulés tout en exécutant des pas de danse enflammés sur un mince câble métallique. Cela ressemble à défier la gravité avec des fruits exotiques en harmonie avec des mélodies classiques qui vous transportent dans un monde de rythme et de mouvement !"
         />

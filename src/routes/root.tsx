@@ -33,8 +33,7 @@ const routes = [
       { to: '#/carousel', text: 'Carousels' },
       { to: '#/table', text: 'Tables' },
       { to: '#/list', text: 'Lists' },
-      { to: '#/card', text: 'Cards' },
-      { to: '#/title', text: 'Titles' }
+      { to: '#/card', text: 'Cards' }
     ]
   },
   {

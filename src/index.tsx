@@ -18,7 +18,6 @@ import TextPage from './pages/TextPage';
 import LinkPage from './pages/LinkPage';
 import LoadingPage from './pages/LoadingPage';
 import ListPage from './pages/ListPage';
-import TitlePage from './pages/TitlePage';
 import TogglePage from './pages/TogglePage';
 import TestimonialPage from './pages/TestimonialPage';
 import CarouselPage from './pages/CarouselPage';
@@ -45,7 +44,6 @@ const router = createHashRouter(
         { path: "table", element: <TablePage /> },
         { path: "list", element: <ListPage /> },
         { path: "card", element: <CardPage /> },
-        { path: "title", element: <TitlePage /> },
 
         { path: "slider", element: <SliderPage /> },
         { path: "button", element: <ButtonPage /> },

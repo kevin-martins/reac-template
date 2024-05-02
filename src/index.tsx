@@ -22,8 +22,9 @@ import TogglePage from './pages/TogglePage';
 import TestimonialPage from './pages/TestimonialPage';
 import CarouselPage from './pages/CarouselPage';
 import NotificationPage from './pages/NotificationPage';
-import HomePage from './pages/HomePage';
 import Components from './routes/components';
+import HomePage from './pages/HomePage';
+import ComponentPage from './pages/ComponentPage';
 
 const router = createHashRouter(
   [
@@ -33,9 +34,14 @@ const router = createHashRouter(
       errorElement: <ErrorPage />,
       children: [
         {
+          path: "/",
+          element: <HomePage />
+        },
+        {
           path: "components",
           element: <Components />,
           children: [
+            { path: "/components", element: <ComponentPage /> },
             { path: "subscription", element: <SubscriptionPage /> },
             { path: "faq", element: <FAQPage /> },
             { path: "contact", element: <ContactPage /> },

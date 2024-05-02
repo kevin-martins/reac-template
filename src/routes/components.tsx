@@ -104,7 +104,7 @@ const Components = () => {
           )
         })}
       </nav>
-      <div className="relative px-3 col-span-1">
+      <div className="relative px-3 mt-20 col-span-1">
         <Outlet />
       </div>
     </div>

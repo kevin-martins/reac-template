@@ -22,6 +22,8 @@ import TogglePage from './pages/TogglePage';
 import TestimonialPage from './pages/TestimonialPage';
 import CarouselPage from './pages/CarouselPage';
 import NotificationPage from './pages/NotificationPage';
+import HomePage from './pages/HomePage';
+import Components from './routes/components';
 
 const router = createHashRouter(
   [
@@ -30,29 +32,35 @@ const router = createHashRouter(
       element: <Root />,
       errorElement: <ErrorPage />,
       children: [
-        { path: "subscription", element: <SubscriptionPage /> },
+        {
+          path: "components",
+          element: <Components />,
+          children: [
+            { path: "subscription", element: <SubscriptionPage /> },
+            { path: "faq", element: <FAQPage /> },
+            { path: "contact", element: <ContactPage /> },
+            { path: "review", element: <ReviewPage /> },
+            { path: "testimonial", element: <TestimonialPage /> },
+    
+            { path: "loading", element: <LoadingPage /> },
+            { path: "text", element: <TextPage /> },
+            { path: "modal", element: <ModalPage /> },
+    
+            { path: "carousel", element: <CarouselPage /> },
+            { path: "table", element: <TablePage /> },
+            { path: "list", element: <ListPage /> },
+            { path: "card", element: <CardPage /> },
+    
+            { path: "slider", element: <SliderPage /> },
+            { path: "button", element: <ButtonPage /> },
+    
+            { path: "link", element: <LinkPage /> },
+            { path: "dropdown", element: <DropdownPage /> },
+            
+            { path: "notification", element: <NotificationPage /> },
+          ]
+        },
 
-        { path: "faq", element: <FAQPage /> },
-        { path: "contact", element: <ContactPage /> },
-        { path: "review", element: <ReviewPage /> },
-        { path: "testimonial", element: <TestimonialPage /> },
-
-        { path: "loading", element: <LoadingPage /> },
-        { path: "text", element: <TextPage /> },
-        { path: "modal", element: <ModalPage /> },
-
-        { path: "carousel", element: <CarouselPage /> },
-        { path: "table", element: <TablePage /> },
-        { path: "list", element: <ListPage /> },
-        { path: "card", element: <CardPage /> },
-
-        { path: "slider", element: <SliderPage /> },
-        { path: "button", element: <ButtonPage /> },
-        // { path: "toggle", element: <TogglePage /> },
-        { path: "link", element: <LinkPage /> },
-        { path: "dropdown", element: <DropdownPage /> },
-        
-        { path: "notification", element: <NotificationPage /> },
       ],
     }
   ]

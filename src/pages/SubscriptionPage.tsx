@@ -4,7 +4,7 @@ import Wrapper from '../components/Wrapper';
 const SubscriptionPage = () => {
   return (
     <div>
-      <Wrapper title='Pricing plan'>
+      <Wrapper title='Pricing plan' padding={false}>
         <Pricing />
       </Wrapper>
     </div>

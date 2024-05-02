@@ -5,6 +5,7 @@ import GradientButton from "../components/button/GradientButton";
 import ShadowButton from "../components/button/ShadowButton";
 import SlideButton from "../components/button/SlideButton";
 import SpotlightButton from "../components/button/SpotlightButton";
+import VerticalFillButton from "../components/button/VerticalFillButton";
 
 const ButtonPage = () => {
   const text = 'Please click me'
@@ -28,6 +29,9 @@ const ButtonPage = () => {
       </Wrapper>
       <Wrapper title='Circle'>
         <CircleButton text={text} />
+      </Wrapper>
+      <Wrapper title='Circle'>
+        <VerticalFillButton text={text} />
       </Wrapper>
     </div>
   );

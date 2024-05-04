@@ -1,12 +1,12 @@
-import Wrapper from "../Wrapper";
-import CircleButton from "./CircleButton";
-import CloseButton from "./CloseButton";
-import RotatingBorderButton from "./RotatingBorderButton";
-import RotatingGradientButton from "./RotatingGradientButton";
-import ShadowButton from "./ShadowButton";
-import SlideButton from "./SlideButton";
-import SpotlightButton from "./SpotlightButton";
-import VerticalFillButton from "./VerticalFillButton";
+import Wrapper from "../../../components/Wrapper";
+import CircleButton from "../../../components/buttons/CircleButton";
+import CloseButton from "../../../components/buttons/CloseButton";
+import RotatingBorderButton from "../../../components/buttons/RotatingBorderButton";
+import RotatingGradientButton from "../../../components/buttons/RotatingGradientButton";
+import ShadowButton from "../../../components/buttons/ShadowButton";
+import SlideButton from "../../../components/buttons/SlideButton";
+import SpotlightButton from "../../../components/buttons/SpotlightButton";
+import VerticalFillButton from "../../../components/buttons/VerticalFillButton";
 
 
 const ButtonPage = () => {

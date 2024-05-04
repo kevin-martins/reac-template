@@ -152,8 +152,8 @@ const PricingCard = ({ card, selected }: PricingCardProps) => {
               <AnimatePresence mode='wait'>
                 {
                   [
-                    <PricingAmount id='monthly' price={card.price.monthly} color={card.color} />,
-                    <PricingAmount id='annual' price={card.price.annual} color={card.color} />
+                    <PricingAmount key='monthly' id='monthly' price={card.price.monthly} color={card.color} />,
+                    <PricingAmount key='annual' id='annual' price={card.price.annual} color={card.color} />
                   ][tabs.indexOf(selected)]
                 }
               </AnimatePresence>
@@ -235,7 +235,7 @@ const pricingCards = [
   }
 ];
 
-const Pricing = () => {
+const VerticalSlidePricing = () => {
   const [selected, setSelected] = useState(tabs[0]);
   return (
     <section className="relative w-full dark:text-white text-black px-4 lg:px-8 py-12 lg:py-24 overflow-hidden">
@@ -273,4 +273,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default VerticalSlidePricing;

@@ -4,27 +4,26 @@ import './styles/index.css';
 import Root from "./routes/root";
 import { RouterProvider, createHashRouter } from 'react-router-dom';
 import ErrorPage from './pages/ErrorPage';
-import FAQPage from './pages/FAQPage';
-import ContactPage from './pages/ContactPage';
-import SubscriptionPage from './pages/SubscriptionPage';
-import TablePage from './pages/TablePage';
-import CardPage from './pages/CardPage';
-import SliderPage from './pages/SliderPage';
-import ModalPage from './pages/ModalPage';
-import DropdownPage from './pages/DropdownPage';
-import ReviewPage from './pages/ReviewPage';
-import TextPage from './pages/TextPage';
-import LinkPage from './pages/LinkPage';
-import LoadingPage from './pages/LoadingPage';
-import ListPage from './pages/ListPage';
+import FAQPage from './pages/components/support/FAQPage';
+import ContactPage from './pages/components/support/ContactPage';
+import PricingPage from './pages/components/subscriptions/PricingPage';
+import TablePage from './pages/components/presentations/TablePage';
+import CardPage from './pages/components/presentations/CardPage';
+import SliderPage from './pages/components/interactions/SliderPage';
+import ModalPage from './pages/components/components/ModalPage';
+import DropdownPage from './pages/components/interactions/DropdownPage';
+import ReviewPage from './pages/components/support/ReviewPage';
+import TextPage from './pages/components/components/TextPage';
+import ListPage from './pages/components/presentations/ListPage';
 import TogglePage from './pages/TogglePage';
-import TestimonialPage from './pages/TestimonialPage';
-import CarouselPage from './pages/CarouselPage';
-import NotificationPage from './pages/NotificationPage';
+import TestimonialPage from './pages/components/support/TestimonialPage';
+import CarouselPage from './pages/components/presentations/CarouselPage';
+import NotificationPage from './pages/components/components/NotificationPage';
 import Components from './routes/components';
 import HomePage from './pages/HomePage';
 import ComponentPage from './pages/ComponentPage';
-import ButtonPage from './components/buttons';
+import ButtonPage from './pages/components/interactions/ButtonPage';
+import LoaderPage from './pages/components/components/LoaderPage';
 
 const router = createHashRouter(
   [
@@ -42,28 +41,25 @@ const router = createHashRouter(
           element: <Components />,
           children: [
             { path: "/components", element: <ComponentPage /> },
-            { path: "subscription", element: <SubscriptionPage /> },
+            { path: "pricing", element: <PricingPage /> },
             { path: "faq", element: <FAQPage /> },
-            { path: "contact", element: <ContactPage /> },
-            { path: "review", element: <ReviewPage /> },
-            { path: "testimonial", element: <TestimonialPage /> },
+            { path: "contacts", element: <ContactPage /> },
+            { path: "reviews", element: <ReviewPage /> },
+            { path: "testimonials", element: <TestimonialPage /> },
     
-            { path: "loading", element: <LoadingPage /> },
-            { path: "text", element: <TextPage /> },
-            { path: "modal", element: <ModalPage /> },
+            { path: "loaders", element: <LoaderPage /> },
+            { path: "texts", element: <TextPage /> },
+            { path: "modals", element: <ModalPage /> },
+            { path: "notifications", element: <NotificationPage /> },
     
-            { path: "carousel", element: <CarouselPage /> },
-            { path: "table", element: <TablePage /> },
-            { path: "list", element: <ListPage /> },
-            { path: "card", element: <CardPage /> },
+            { path: "carousels", element: <CarouselPage /> },
+            { path: "tables", element: <TablePage /> },
+            { path: "lists", element: <ListPage /> },
+            { path: "cards", element: <CardPage /> },
     
-            { path: "slider", element: <SliderPage /> },
-            { path: "button", element: <ButtonPage /> },
-    
-            { path: "link", element: <LinkPage /> },
-            { path: "dropdown", element: <DropdownPage /> },
-            
-            { path: "notification", element: <NotificationPage /> },
+            { path: "sliders", element: <SliderPage /> },
+            { path: "buttons", element: <ButtonPage /> },
+            { path: "dropdowns", element: <DropdownPage /> },
           ]
         },
 

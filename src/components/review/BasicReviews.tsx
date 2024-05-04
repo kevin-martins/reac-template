@@ -1,4 +1,4 @@
-import { ReviewCardProps, ReviewProps, calculateTimeSincePublished, renderStars } from "../../pages/ReviewPage";
+import { ReviewCardProps, ReviewProps, calculateTimeSincePublished, renderStars } from "../../pages/components/support/ReviewPage";
 
 const ReviewCard = ({ rating, username, profile, publishedTime, feedback }: ReviewCardProps) => {
   const formattedTime = calculateTimeSincePublished(publishedTime);

@@ -60,10 +60,12 @@ const FromBothSide = () => {
       </motion.div>
       <motion.img
         variants={rightVariants}
-        src='https://picsum.photos/seed/picsum/400/250'
+        src={process.env.PUBLIC_URL + '/assets/image_3.png'}
         alt='random image'
+        width={400}
         initial='hidden'
         animate={isInView && 'open'}
+        className='object-cover rounded-lg'
       />
     </div>
   );

@@ -1,6 +1,7 @@
 import FromBothSide from "../components/cards/FromBothSide";
 import PopCard from "../components/cards/PopCard";
 import SkillCard from "../components/cards/SkillCard";
+import TiltCard from "../components/cards/TiltCard";
 import Wrapper from "../components/Wrapper";
 
 type Props = {
@@ -26,8 +27,8 @@ const CardPage = () => {
       <Wrapper title="From both sides">
         <FromBothSide />
       </Wrapper>
-      <Wrapper title="From both sides">
-        <SkillCard />
+      <Wrapper title="Hover tilt">
+        <TiltCard />
       </Wrapper>
     </div>
   );

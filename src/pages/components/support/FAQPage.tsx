@@ -1,5 +1,5 @@
-import Wrapper from "../components/Wrapper";
-import FAQs from "../components/faq/FAQs";
+import Wrapper from "../../../components/Wrapper";
+import FAQs from "../../../components/faq/FAQs";
 
 const FAQPage = () => {
   return (

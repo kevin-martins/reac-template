@@ -1,8 +1,8 @@
-import FromBothSide from "../components/cards/FromBothSide";
-import PopCard from "../components/cards/PopCard";
-import SkillCard from "../components/cards/SkillCard";
-import TiltCard from "../components/cards/TiltCard";
-import Wrapper from "../components/Wrapper";
+import FromBothSide from "../../../components/cards/FromBothSide";
+import PopCard from "../../../components/cards/PopCard";
+import SkillCard from "../../../components/cards/SkillCard";
+import TiltCard from "../../../components/cards/TiltCard";
+import Wrapper from "../../../components/Wrapper";
 
 type Props = {
   title: string

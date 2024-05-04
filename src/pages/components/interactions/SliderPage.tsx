@@ -1,4 +1,4 @@
-import ImageSlider from '../components/user-interactions/ImageSlider';
+import ImageSlider from '../../../components/user-interactions/ImageSlider';
 
 type Props = {
   title: string

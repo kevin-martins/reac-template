@@ -1,5 +1,5 @@
-import SwipeCarousel from '../components/carousels/SwipeCarousel';
-import Wrapper from '../components/Wrapper';
+import SwipeCarousel from '../../../components/carousels/SwipeCarousel';
+import Wrapper from '../../../components/Wrapper';
 
 const CarouselPage = () => {
   return (

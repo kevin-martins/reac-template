@@ -1,5 +1,5 @@
-import Wrapper from '../components/Wrapper';
-import SlideInNotifications from '../components/notifications/SendNotifications';
+import Wrapper from '../../../components/Wrapper';
+import SlideInNotifications from '../../../components/notifications/SendNotifications';
 
 const NotificationPage = () => {
   return (

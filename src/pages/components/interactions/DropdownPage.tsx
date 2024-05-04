@@ -1,6 +1,6 @@
 import React from 'react'
-import Wrapper from '../components/Wrapper';
-import StaggeredDropDown from '../components/dropdown/Dropdown';
+import Wrapper from '../../../components/Wrapper';
+import StaggeredDropDown from '../../../components/dropdown/Dropdown';
 
 const DropdownPage = () => {
   return (

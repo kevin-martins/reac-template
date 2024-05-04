@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SpringModal from "../components/modal/SpringModal";
-import Wrapper from "../components/Wrapper";
+import SpringModal from "../../../components/modal/SpringModal";
+import Wrapper from "../../../components/Wrapper";
 
 const ExampleWrapper = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,6 +1,6 @@
-import Wrapper from "../components/Wrapper";
-import CustomerReview from "../components/review/CustomerReview";
-import BasicReviews from "../components/review/BasicReviews";
+import Wrapper from "../../../components/Wrapper";
+import CustomerReview from "../../../components/review/CustomerReview";
+import BasicReviews from "../../../components/review/BasicReviews";
 
 export type StarProps = {
   fill: number

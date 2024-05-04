@@ -37,6 +37,7 @@ const QuestionAnswer = ({ question, answer }: QuestionAnswerProps) => {
       >
         <motion.span
           variants={questionVariants}
+          initial='close'
           animate={isClicked ? 'open': 'close' }
           className="text-left font-medium"
         >

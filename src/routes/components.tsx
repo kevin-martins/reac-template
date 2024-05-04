@@ -21,8 +21,8 @@ const linkVariants = {
 const Components = () => {
   const { pathname } = useLocation();
   return (
-    <div className="md:grid md:grid-cols-[200px_calc(100%_-_200px)]">
-      <nav className="scrollbar-none sticky top-[54px] col-span-1 hidden h-[calc(100vh_-_54px)] flex-col gap-1 overflow-y-scroll bg-white px-3 py-6 md:flex">
+    <div className="block md:grid md:grid-cols-[200px_calc(100%_-_200px)]">
+      <nav className="scrollbar-none sticky mt-[54px] top-[54px] col-span-1 hidden h-[calc(100vh_-_54px)] flex-col gap-1 overflow-y-scroll bg-white px-3 py-6 md:flex">
         {routes.map((route, i) => {
           return (
             <div key={i}>

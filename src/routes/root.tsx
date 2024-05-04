@@ -59,7 +59,7 @@ const NavigationLink = (link: LinkProps) => {
 
 const NavBar = () => {
   return (
-    <div className='fixed h-[54px] z-50 w-full bg-slate-700 shadow-lg text-white flex items-center'>
+    <div className='fixed h-[54px] top-0 z-50 w-full bg-slate-700 shadow-lg text-white flex items-center'>
       {links.map((link, i) => (
         <NavigationLink key={i} {...link} />
       ))}

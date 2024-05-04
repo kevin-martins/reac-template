@@ -8,7 +8,6 @@ import FAQPage from './pages/FAQPage';
 import ContactPage from './pages/ContactPage';
 import SubscriptionPage from './pages/SubscriptionPage';
 import TablePage from './pages/TablePage';
-import ButtonPage from './pages/ButtonPage';
 import CardPage from './pages/CardPage';
 import SliderPage from './pages/SliderPage';
 import ModalPage from './pages/ModalPage';
@@ -25,6 +24,7 @@ import NotificationPage from './pages/NotificationPage';
 import Components from './routes/components';
 import HomePage from './pages/HomePage';
 import ComponentPage from './pages/ComponentPage';
+import ButtonPage from './components/buttons';
 
 const router = createHashRouter(
   [

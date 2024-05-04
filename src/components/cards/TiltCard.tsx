@@ -54,8 +54,6 @@ const TiltCard = () => {
       style={{
         transformStyle: "preserve-3d",
         transform,
-        // backgroundImage: "radial-gradient(circle at center center, rgb(252, 252, 252), rgb(82, 82, 82))"
-        // backgroundImage: "radial-gradient(circle at center center, rgb(93, 60, 152),rgb(10, 3, 9))"
         backgroundImage: "radial-gradient(circle at top center, rgb(193,90,152), rgb(19,25,57), rgb(34,44,96), rgb(92,148,216), rgb(64,99,178), rgb(14,23,44))"
       }}
       className="relative h-96 w-72 rounded-xl"

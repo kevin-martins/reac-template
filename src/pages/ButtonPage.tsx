@@ -2,6 +2,8 @@ import Wrapper from "../components/Wrapper";
 import CircleButton from "../components/button/CircleButton";
 import CloseButton from "../components/button/CloseButton";
 import GradientButton from "../components/button/GradientButton";
+import RotatingBorderButton from "../components/button/RotatingBorderButton";
+import RotatingGradientButton from "../components/button/RotatingGradientButton";
 import ShadowButton from "../components/button/ShadowButton";
 import SlideButton from "../components/button/SlideButton";
 import SpotlightButton from "../components/button/SpotlightButton";
@@ -15,9 +17,12 @@ const ButtonPage = () => {
       <Wrapper title='Shadow'>
         <ShadowButton text={text} />
       </Wrapper>
-      <Wrapper title='Gradient'>
-        <GradientButton text={text} />
+      <Wrapper title='Rotating border'>
+        <RotatingBorderButton text={text} />
       </Wrapper>
+      {/* <Wrapper title='Rotating gradient'>
+        <RotatingGradientButton text={text} />
+      </Wrapper> */}
       <Wrapper title='Spotlight'>
         <SpotlightButton text={text} />
       </Wrapper>

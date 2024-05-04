@@ -33,7 +33,7 @@ export const routes = [
     ]
   },
   {
-    title: 'User Intefactions',
+    title: 'User Interactions',
     links: [
       { to: '#/components/sliders', text: 'Sliders' },
       { to: '#/components/buttons', text: 'Buttons' },

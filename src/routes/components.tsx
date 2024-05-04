@@ -17,7 +17,6 @@ const linkVariants = {
   }
 };
 
-
 const Components = () => {
   const { pathname } = useLocation();
   return (

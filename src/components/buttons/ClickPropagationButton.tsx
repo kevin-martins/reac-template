@@ -8,24 +8,20 @@ type Props = {
 const ClickPropagationButton = ({ text }: Props) => {
   const btnRef = useRef<HTMLButtonElement | null>(null);
   const spanRef = useRef<HTMLSpanElement | null>(null);
-  const [isClicked, setIsClicked] = useState(false)
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { width } = (e.target as HTMLElement)?.getBoundingClientRect();
-      const offset = e.offsetX;
-      const left = `${(offset / width) * 100}%`;
-
-      !isClicked && spanRef.current!.animate({ left }, { duration: 100, fill: "forwards" });
-    };
-
     const handleMouseClick = (e: MouseEvent) => {
       const { width, height } = (e.target as HTMLElement)?.getBoundingClientRect();
+      const { offsetX, offsetY } = e;
+      const left = `${(offsetX / width) * 100}%`;
+      const top = `${(offsetY / height) * 100}%`;
+
+      spanRef.current!.style.left = left;
+      spanRef.current!.style.top = top;
       spanRef.current!.animate(
         { height: '600px', width: '600px' },
-        { duration: 250, fill: "forwards" }
+        { duration: 400, fill: "both" }
       );
-      setIsClicked(true);
     }
 
     const handleMouseLeave = () => {
@@ -33,19 +29,16 @@ const ClickPropagationButton = ({ text }: Props) => {
         { height: '0px', width: '0px' },
         { duration: 150, fill: "forwards" }
       );
-      setIsClicked(false);
     };
 
-    btnRef?.current?.addEventListener("mousemove", handleMouseMove);
     btnRef?.current?.addEventListener("mousedown", handleMouseClick);
     btnRef?.current?.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      btnRef?.current?.removeEventListener("mousemove", handleMouseMove);
       btnRef?.current?.removeEventListener("mousedown", handleMouseClick);
       btnRef?.current?.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [isClicked]);
+  }, []);
 
   return (
     <motion.button
@@ -59,7 +52,7 @@ const ClickPropagationButton = ({ text }: Props) => {
       </span>
       <motion.span
         ref={spanRef}
-        className="pointer-events-none origin-center absolute left-[50%] top-[50%] h-0 w-0 -translate-x-[50%] -translate-y-[50%] rounded-full bg-yellow-600"
+        className="pointer-events-none absolute -translate-x-[50%] -translate-y-[50%] rounded-full bg-yellow-600"
       />
     </motion.button>
   );

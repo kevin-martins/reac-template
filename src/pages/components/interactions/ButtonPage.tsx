@@ -5,7 +5,7 @@ import RotatingBorderButton from "../../../components/buttons/RotatingBorderButt
 import RotatingGradientButton from "../../../components/buttons/RotatingGradientButton";
 import ShadowButton from "../../../components/buttons/ShadowButton";
 import SlideButton from "../../../components/buttons/SlideButton";
-import SpotlightButton from "../../../components/buttons/SpotlightButton";
+import ClickPropagationButton from "../../../components/buttons/ClickPropagationButton";
 import VerticalFillButton from "../../../components/buttons/VerticalFillButton";
 
 
@@ -20,13 +20,13 @@ const ButtonPage = () => {
       <Wrapper title='Rotating border'>
         <RotatingBorderButton text={text} />
       </Wrapper>
-      <Wrapper title='Rotating gradient'>
+      {/* <Wrapper title='Rotating gradient'>
         <RotatingGradientButton text={text} />
-      </Wrapper>
-      {/* <Wrapper title='Spotlight'>
-        <SpotlightButton text={text} />
       </Wrapper> */}
-      <Wrapper title='Slide'>
+      <Wrapper title='Click protagation'>
+        <ClickPropagationButton text={text} />
+      </Wrapper>
+      <Wrapper title='Fill'>
         <SlideButton text={text} />
       </Wrapper>
       <Wrapper title='Close'>
@@ -35,7 +35,7 @@ const ButtonPage = () => {
       <Wrapper title='Circle'>
         <CircleButton text={text} />
       </Wrapper>
-      <Wrapper title='Circle'>
+      <Wrapper title='Slide'>
         <VerticalFillButton text={text} />
       </Wrapper>
     </>

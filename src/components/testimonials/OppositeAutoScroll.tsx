@@ -29,33 +29,33 @@ const DURATION = 25;
 
 const IconsList1 = () => (
   <>
-    <BiLogoDribbble className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoPinterest className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoGithub className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoDeviantart className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoFacebook className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoSnapchat className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoTumblr className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoTwitter className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoReddit className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoLinkedin className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoSlack className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoDribbble className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoPinterest className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoGithub className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoDeviantart className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoFacebook className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoSnapchat className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoTumblr className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoTwitter className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoReddit className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoLinkedin className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoSlack className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
   </>
 );
 
 const BackendIcons = () => (
   <>
-    <BiLogoAndroid className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoDropbox className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoSteam className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoUnity className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoTwitch className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoWindows className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoDeezer className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoAmazon className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoDiscordAlt  className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoAirbnb className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
-    <BiLogoVimeo className='text-black hover:bg-black/30 hover:text-slate-800 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoAndroid className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoDropbox className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoSteam className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoUnity className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoTwitch className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoWindows className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoDeezer className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoAmazon className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoDiscordAlt  className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoAirbnb className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
+    <BiLogoVimeo className='text-black hover:bg-black/30 hover:p-0 duration-500 rounded-lg w-16 h-16 md:w-24 md:h-24 p-3' />
   </>
 );
 

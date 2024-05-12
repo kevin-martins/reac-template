@@ -20,12 +20,14 @@ export const routes = [
       { to: '#/components/loaders', text: 'Loaders' },
       { to: '#/components/texts', text: 'Texts' },
       { to: '#/components/modals', text: 'Modals' },
-      { to: '#/components/notifications', text: 'Notifications' }
+      { to: '#/components/notifications', text: 'Notifications' },
+      { to: '#/components/stats', text: 'Stats' }
     ]
   },
   {
     title: 'Presentations',
     links: [
+      { to: '#/components/hero', text: 'Hero' },
       { to: '#/components/carousels', text: 'Carousels' },
       { to: '#/components/tables', text: 'Tables' },
       { to: '#/components/lists', text: 'Lists' },

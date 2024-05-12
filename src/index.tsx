@@ -25,6 +25,7 @@ import ComponentPage from './pages/ComponentPage';
 import ButtonPage from './pages/components/interactions/ButtonPage';
 import LoaderPage from './pages/components/components/LoaderPage';
 import StatPage from './pages/components/components/StatPage';
+import HeroPage from './pages/components/presentations/HeroPage';
 
 const router = createHashRouter(
   [
@@ -54,6 +55,7 @@ const router = createHashRouter(
             { path: "notifications", element: <NotificationPage /> },
             { path: "stats", element: <StatPage /> },
     
+            { path: "hero", element: <HeroPage /> },
             { path: "carousels", element: <CarouselPage /> },
             { path: "tables", element: <TablePage /> },
             { path: "lists", element: <ListPage /> },

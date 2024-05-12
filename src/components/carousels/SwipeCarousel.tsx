@@ -1,16 +1,13 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
-const imgs = [
+const images = [
   "assets/image_1.png",
-  "assets/image_1.png",
-  "assets/image_1.png",
-  "assets/image_1.png",
-  "assets/image_1.png"
+  "assets/image_9.avif",
+  "assets/image_8.avif",
 ];
 
-const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 10;
+const SWIPE_DELAY = 10000;
 const DRAG_BUFFER = 10;
 
 const springTransition = {
@@ -23,7 +20,7 @@ const springTransition = {
 const Images = ({ imgIndex }: { imgIndex: number }) => {
   return (
     <>
-      {imgs.map((imgSrc, i) => (
+      {images.map((imgSrc, i) => (
         <motion.img
           key={i}
           src={`${process.env.PUBLIC_URL}/${imgSrc}`}
@@ -47,7 +44,7 @@ type DotsProps = {
 
 const Dots = ({ imgIndex, setImgIndex }: DotsProps) => (
   <div className="mt-4 flex w-full justify-center gap-2">
-    {imgs.map((_, i) => (
+    {images.map((_, i) => (
       <button
         key={i}
         onClick={() => setImgIndex(i)}
@@ -69,13 +66,13 @@ const SwipeCarousel = () => {
 
       if (x === 0) {
         setImgIndex((pv) => {
-          if (pv === imgs.length - 1) {
+          if (pv === images.length - 1) {
             return 0;
           }
           return pv + 1;
         });
       }
-    }, AUTO_DELAY);
+    }, SWIPE_DELAY);
 
     return () => clearInterval(intervalRef);
   }, []);
@@ -83,7 +80,7 @@ const SwipeCarousel = () => {
   const onDragEnd = () => {
     const x = dragX.get();
 
-    if (x <= -DRAG_BUFFER && imgIndex < imgs.length - 1) {
+    if (x <= -DRAG_BUFFER && imgIndex < images.length - 1) {
       setImgIndex((pv) => pv + 1);
     } else if (x >= DRAG_BUFFER && imgIndex > 0) {
       setImgIndex((pv) => pv - 1);

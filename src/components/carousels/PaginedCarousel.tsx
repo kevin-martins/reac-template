@@ -4,10 +4,8 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const images = [
   "assets/image_1.png",
-  "assets/image_1.png",
-  "assets/image_1.png",
-  "assets/image_1.png",
-  "assets/image_1.png"
+  "assets/image_9.avif",
+  "assets/image_8.avif",
 ];
 
 const SWIPE_DELAY = 10000;

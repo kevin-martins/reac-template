@@ -13,13 +13,13 @@ const ComponentButton = (link: LinkProps): JSX.Element => {
       onMouseLeave={() => setIsHover(false)}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: .95 }}
-      className='relative grid place-content-center h-14 w-44 overflow-hidden border border-black rounded-lg'
+      className='relative grid place-content-center w-[200px] h-[55px] overflow-hidden border-2 hover:border-blue-500 rounded-lg duration-300'
     >
       <motion.div
-        animate={isHover ? { x: [0, 171, 171, 0, 0], y: [0, 0, 51, 51, 0], transition: { duration: 2.2, repeat: Infinity } } : { opacity: 0 }}
-        className='absolute -z-10 -top-[5px] -left-[5px] rounded-[100%] bg-slate-600 p-2 shadow-[0_0_40px_30px_rgb(51,65,85)]'
+        animate={isHover ? { x: [0, 196, 196, 0, 0], y: [0, 0, 51, 51, 0], transition: { duration: 1.8, repeat: Infinity } } : { opacity: 0 }}
+        className='absolute -z-10 -top-[4px] -left-[4px] rounded-[100%] bg-blue-800 p-2 shadow-[0_0_20px_20px_rgb(30,64,175)]'
       />
-      <div className='bg-white border border-black rounded-lg h-[50px] w-[170px] grid place-content-center'>
+      <div className='bg-blue-600 text-white rounded-lg absolute inset-1 grid place-content-center'>
         <span>
           {link.text}
         </span>

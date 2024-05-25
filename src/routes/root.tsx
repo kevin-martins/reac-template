@@ -71,7 +71,7 @@ const Root = () => {
   return (
     <main className="h-full">
       <NavBar />
-      <div className="relative px-3 col-span-1">
+      <div className="relative col-span-1">
         <Outlet />
       </div>
     </main>

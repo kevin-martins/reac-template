@@ -7,6 +7,7 @@ import ShadowButton from "../../../components/buttons/ShadowButton";
 import SlideButton from "../../../components/buttons/SlideButton";
 import ClickPropagationButton from "../../../components/buttons/ClickPropagationButton";
 import VerticalFillButton from "../../../components/buttons/VerticalFillButton";
+import CircleFillButton from "../../../components/buttons/CircleFillButton";
 
 
 const ButtonPage = () => {
@@ -16,6 +17,9 @@ const ButtonPage = () => {
       <h1 className="text-3xl">Button Page</h1>
       <Wrapper title='Shadow'>
         <ShadowButton text={text} />
+      </Wrapper>
+      <Wrapper title='Fill From Left'>
+        <CircleFillButton text={text} />
       </Wrapper>
       <Wrapper title='Rotating border'>
         <RotatingBorderButton text={text} />
